@@ -1,114 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" type="image/png" href="" />
-	<title>#pushpatr/2021-22/Attendance</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700
-		&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700
-		&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style>
+            .register .nav-tabs .nav-link:hover{
+                border: none;
+            }
+            .text-align{
+                margin-top: -3%;
+                margin-bottom: -9%;
 
-	<style>
-		* {
-			box-sizing: border-box;
-			font-family: 'Noto Serif', serif;
-		}
+                padding: 10%;
+                margin-left: 30%;
+            }
+            .form-new{
+                margin-right: 22%;
+                margin-left: 20%;
+            }
+            .register-heading{
+                margin-left: 21%;
+                margin-bottom: 10%;
+                color: #e9ecef;
+            }
+            .register-heading h1{
+                margin-left: 21%;
+                margin-bottom: 10%;
+                color: #e9ecef;
+            }
+            .register{
+                background: -webkit-linear-gradient(left, #055a4f, #00c6ff);
+                margin-top: 3%;
+                padding: 3%;
+                border-radius: 2.5rem;
+            }
+            .btnSubmit
+            {
+                width: 50%;
+                border-radius: 1rem;
+                padding: 1.5%;
+                color: #fff;
+                background-color: #03612e;
+                border: none;
+                cursor: pointer;
+                margin-right: 6%;
+                color: rgb(246, 246, 252);
+                margin-top: 4%;
+            }
+    </style>
 
-		html,
-		body {
-			margin: 0;
-			padding: 0;
-			background: wheat;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
-
-		#mainCont {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			width: 95vw;
-			height: 100%;
-			margin-top: 30vh;
-			flex-grow: 1;
-		}
-
-		#time {
-			display: flex;
-			flex-direction: row;
-			font-size: 3em;
-		}
-
-		#time>div {
-			font-family: 'Roboto Mono', monospace;
-		}
-
-		#sec {
-			animation: blink 1s ease infinite;
-		}
-
-		@keyframes blink {
-			from {
-				opacity: 0;
-			}
-
-			to {
-				opacity: 1;
-			}
-		}
-		.flexcol{
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			width: 100%;
-			height: auto;
-			flex-grow: 1;
-		}
-		.crd{
-			padding: 0.25em 0.5em;
-			border: 2px solid #0008;
-			border-radius: 4vmin;
-			margin-top: 0.5em;
-			background: #0002;
-		}
-	</style>
 </head>
-
 <body>
-
-	<div id="mainCont">
-		<div id="frmCont" class="crd flexcol">
-			<form method="post" autocomplete="off" name="google-sheet">
-				<input name="email" type="email" placeholder="Email" class="flexcol" required>
-				<input type="submit" name="submit" class="flexCol" value="Submit Attendance" />
-			</form>
-		</div>
-	</div>
-
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script src="../j/hsh.js"></script>
-
-	<script>
-		const scriptURL = 'https://script.google.com/macros/s/AKfycbx3MyOfkRpXM4OP8h7oynG4eV28uo12NYzP5zAhO-GJX24SQElmTjWHn2vWTa2OvquZVw/exec'
-		const form = document.forms['google-sheet']
+    
+<div class="container register">
+            <div class="row">
+                <div class="col-md-12">
+                        <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Connect Google Spreadsheet to HTML</h3>
+                            <div class="row register-form">
+                                <div class="col-md-12">
+                                    <form method="post" autocomplete="off" name="google-sheet">
+                                            <input type="text" name="Name" class="form-control" placeholder="Your Name *" value="" required=""/>
+                                            <input type="text" name="Email" class="form-control" placeholder="Your Email *" value="" required=""/>
+                                            <input type="number" name="Phone" class="form-control" placeholder="Your Contact Number *" value="" required=""/>
+                                            <input type="submit" name="submit" class="btnSubmit btn-block" value="Login" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
           
-		  form.addEventListener('submit', e => {
-			e.preventDefault()
-			fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-			  .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
-			  .catch(error => console.error('Error!', error.message))
-		  })
-	</script>
-</body>
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzB5z2ga6zUrOlVvB44DvMbY9zhVjB2GuvY4_dNzFQZPxKX4rrR4NdGPQ64G13zLdEHUg/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks!<br/>Your Attendance is submitted!!"))
+                .catch(error => console.error('Error! Please try again or contact me on WhatsApp', error.message))
+            })
+          </script>
 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
 </html>
