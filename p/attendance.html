@@ -43,16 +43,14 @@
 
 <body>
 	<div id="mainCont" class="flexCol">
-
-		<form method="post" autocomplete="off" name="google-sheet" id="fifthAttnForm" onsubmit="return false">
+		<form method="post" autocomplete="off" name="google-sheet" id="fifthAttnForm" class="flexCol" onsubmit="return false">
 			<input type="text" name="Name" class="form-control" placeholder="Your Name *" value="" required="" />
-			<input type="text" name="Email" class="form-control" placeholder="Your Email *" value="" required="" />
-			<input type="number" name="Phone" class="form-control" placeholder="Your Contact Number *" value="" required="" />
 			<input type="text" class="noDisp" id="OSID" name="OS" value="" />
 			<input type="text" class="noDisp" id="APPNAMEID" name="APPNAME" value="" />
 			<input type="text" class="noDisp" id="APCDNAMEID" name="APCDNAME" value="" />
 			<input type="text" class="noDisp" id="NAVIPLTFID" name="NAVIPLTF" value="" />
 			<input type="text" class="noDisp" id="MAXPTSID" name="MAXPTS" value="" />
+			<input type="text" class="noDisp" id="IP" name="IP" value="" />
 			<input type="submit" name="submit" class="btnSubmit btn-block" value="Submit Attendance" />
 		</form>
 	</div>
@@ -63,6 +61,9 @@
 
 	<script type="text/javascript">
 
+		$.getJSON("https://api.ipify.org/?format=json", function(e) {
+			$("#IP").val(e.ip);
+		});
 		$("#OSID").val(navigator.appVersion);
 		$("#APPNAMEID").val(navigator.appName);
 		$("#APCDNAMEID").val(navigator.appCodeName);
