@@ -64,6 +64,10 @@
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 	<script type="text/javascript">
+		let scrWidth = $(window).width();
+		let scrHeight = $(window).height();
+		let brwsrWidth = $(window).innerWidth();
+		let brwsrHeight = $(window).innerHeight();
 
 		$.getJSON("https://api.ipify.org/?format=json", function(e) {
 			$("#IP").val(e.ip);
@@ -73,10 +77,10 @@
 		$("#APCDNAMEID").val(navigator.appCodeName);
 		$("#NAVIPLTFID").val(navigator.platform);
 		$("#MAXPTSID").val(navigator.maxTouchPoints);
-		$("#scrWdt").val($(window).width());
-		$("#scrHgt").val($(window).height());
-		$("#brwsrWdt").val($(window).innerWidth());
-		$("#brwsrHgt").val($(window).innerHeight());
+		$("#scrWdt").val(scrWidth);
+		$("#scrHgt").val(scrHeight);
+		$("#brwsrWdt").val(brwsrWidth);
+		$("#brwsrHgt").val(brwsrHeight);
 
 		const scriptURL = 'https://script.google.com/macros/s/AKfycbzB5z2ga6zUrOlVvB44DvMbY9zhVjB2GuvY4_dNzFQZPxKX4rrR4NdGPQ64G13zLdEHUg/exec'
 		const form = document.forms['google-sheet'];
