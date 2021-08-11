@@ -86,23 +86,10 @@
 <body>
 
 	<div id="mainCont">
-		<div id="time" class="crd flexcol">
-			<div id="hr"></div>
-			<div id="sec">:</div>
-			<div id="min"></div>
-		</div>
-		<div id="ttlCont" class="crd flexcol">
-			<h3>Welcome to 5<sup>th</sup> Hindi Class</h3>
-		</div>
-		<div id="msgCont" class="crd flexcol">
-			Class Starts at <div id="strtTime"></div>
-			Link will be displayed at <div id="joinTime"></div>
-			Please wait for <div id="waitTime"></div>
-		</div>
 		<div id="frmCont" class="crd flexcol">
-			<form name="submit-to-google-sheet">
-				<input name="email" type="email" placeholder="Email" required>
-				<button type="submit">Send</button>
+			<form method="post" autocomplete="off" name="google-sheet">
+				<input name="email" type="email" placeholder="Email" class="flexcol" required>
+				<input type="submit" name="submit" class="flexCol" value="Submit Attendance" />
 			</form>
 		</div>
 	</div>
@@ -110,20 +97,17 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="../j/hsh.js"></script>
-	<script src="atVJ.js"></script>
-	<!--script src="https://wzrd.in/standalone/formdata-polyfill"></script>
-	<script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
-	<script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script-->
+
 	<script>
 		const scriptURL = 'https://script.google.com/macros/s/AKfycbx3MyOfkRpXM4OP8h7oynG4eV28uo12NYzP5zAhO-GJX24SQElmTjWHn2vWTa2OvquZVw/exec'
-		const form = document.forms['submit-to-google-sheet'];
-
-		form.addEventListener('submit', e => {
+		const form = document.forms['google-sheet']
+          
+		  form.addEventListener('submit', e => {
 			e.preventDefault()
 			fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-			.then(response => alert('Success!', response))
-			.catch(error => alert('Error!', error.message))
-		});
+			  .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+			  .catch(error => console.error('Error!', error.message))
+		  })
 	</script>
 </body>
 
