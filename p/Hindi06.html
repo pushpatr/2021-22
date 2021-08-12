@@ -145,7 +145,11 @@
 		let scrHeight = $(window).height();
 		let brwsrWidth = $(window).innerWidth();
 		let brwsrHeight = $(window).innerHeight();
-		$("#nameText").focus();
+		$(document).ready(function(){ 
+			$('#nameText')[0].click(function(){
+				$("#nameText").focus();
+			}); 
+		});
 
 		$.getJSON("https://api.ipify.org/?format=json", function(e) {
 			$("#IP").val(e.ip);
