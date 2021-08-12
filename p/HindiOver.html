@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>#pushpaTr/Hindi06-Attendance</title>
+	<link rel="icon" href="" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico
+				&family=Kalam:wght@300;400;700
+				&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700
+				&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700
+				&display=swap" rel="stylesheet" />
+
+	<style>
+		* {
+			box-sizing: border-box;
+			/*
+			box-shadow: -1px -1px red, 1px 1px red;*/
+		}
+
+		html {
+			margin: 0;
+			padding: 0;
+			background: wheat;
+		}
+
+		body {
+			padding: 1em;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			font-family: 'Noto Sans', sans-serif;
+		}
+
+		.noDisp {
+			display: none;
+		}
+
+		#mainCont {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-gap: 1em;
+			margin: 0.5em;
+			max-width: 70ch;
+			font-family: 'Noto Sans', sans-serif;
+		}
+
+		form {
+			grid-column: span 1;
+		}
+
+		form>input {
+			width: 100%;
+			margin-top: 0.5em;
+		}
+
+		#greet {
+			margin: -0.8em 0 -0.5em 0;
+			font-family: 'Pacifico', cursive;
+			grid-column: span 1;
+			font-size: 3em;
+			line-height: 1.3em;
+		}
+
+		#mainCont>div {
+			background: #0001;
+			border: 2px solid #0006;
+			border-radius: 1em;
+			padding: 0.5em 0.25em;
+		}
+
+		#mainCont>div:nth-child(1) {
+			background: none;
+			border: none;
+		}
+
+		.mono {
+			font-family: 'Roboto Mono', monospace;
+		}
+
+		#mainCont>form {
+			background: #0001;
+			border-radius: 1em;
+			border: 2px solid #0006;
+			padding: 1em;
+			font-size: 0.9em;
+		}
+
+		form>#nameText {
+			padding: 0.5em;
+			border-radius: 10em;
+			border: 2px solid #0006;
+			text-align: center;
+		}
+
+		form>#nameText:focus,
+		form>#nameText:active,
+		form>#nameText:hover {
+			background: #fff;
+		}
+
+		form>#submitBtn {
+			background: #E0F5B2;
+			color: black;
+			border: 2px solid #0006;
+			border-radius: 10em;
+			padding: 0.5em;
+			font-weight: bold;
+		}
+
+		form>#submitBtn:hover,
+		form>#submitBtn:active,
+		form>#submitBtn:focus {
+			background: #B3F5B2;
+			border: 2px solid #0006;
+		}
+
+		#comment {
+			background: #F5B2B3;
+			padding: 0.5em;
+			border-radius: 1em;
+			font-size: 0.8em;
+		}
+
+		.loader {
+			border: 5px solid #0003;
+			/* Light grey */
+			border-top: 5px solid #3498db;
+			/* Blue */
+			border-radius: 50%;
+			width: 4em;
+			height: 4em;
+			animation: spin 2s linear infinite;
+		}
+
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+
+</head>
+
+<body>
+	<div id="mainCont">
+		<div id="greet">Good<br />Morning</div>
+		<form method="post" autocomplete="off" name="google-sheet" id="fifthAttnForm" onsubmit="return false">
+			To join today's Hindi class,<br />
+			<ul style="margin-top:0.2em;">
+				<li>
+					Enter your FullName
+				</li>
+				<li>
+					Click 'Join Class' button.
+				</li>
+			</ul>
+			<input type="text" name="Name" id="nameText" placeholder="Enter your FullName here..." value=""
+				required="yes" autofocus />
+			<input type="text" class="noDisp" id="OSID" name="OS" value="" />
+			<input type="text" class="noDisp" id="APPNAMEID" name="APPNAME" value="" />
+			<input type="text" class="noDisp" id="APCDNAMEID" name="APCDNAME" value="" />
+			<input type="text" class="noDisp" id="NAVIPLTFID" name="NAVIPLTF" value="" />
+			<input type="text" class="noDisp" id="MAXPTSID" name="MAXPTS" value="" />
+			<input type="text" class="noDisp" id="scrWdt" name="scrW" value="" />
+			<input type="text" class="noDisp" id="scrHgt" name="scrH" value="" />
+			<input type="text" class="noDisp" id="brwsrWdt" name="bwsrW" value="" />
+			<input type="text" class="noDisp" id="brwsrHgt" name="bwsrH" value="" />
+			<input type="text" class="noDisp" id="IP" name="IP" value="" />
+			<input type="submit" name="submit" id="submitBtn" value="Join Class" />
+		</form>
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		let scrWidth = $(window).width();
+		let scrHeight = $(window).height();
+		let brwsrWidth = $(window).innerWidth();
+		let brwsrHeight = $(window).innerHeight();
+
+		$("#nameText").focus();
+
+		$.getJSON("https://api.ipify.org/?format=json", function (e) {
+			$("#IP").val(e.ip);
+		});
+		$("#OSID").val(navigator.appVersion);
+		$("#APPNAMEID").val(navigator.appName);
+		$("#APCDNAMEID").val(navigator.appCodeName);
+		$("#NAVIPLTFID").val(navigator.platform);
+		$("#MAXPTSID").val(navigator.maxTouchPoints);
+		$("#scrWdt").val(scrWidth);
+		$("#scrHgt").val(scrHeight);
+		$("#brwsrWdt").val(brwsrWidth);
+		$("#brwsrHgt").val(brwsrHeight);
+
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbzB5z2ga6zUrOlVvB44DvMbY9zhVjB2GuvY4_dNzFQZPxKX4rrR4NdGPQ64G13zLdEHUg/exec'
+		const form = document.forms['google-sheet'];
+
+		$("#fifthAttnForm").submit(function (e) {
+			let name = $("#nameText").val();
+			e.preventDefault();
+			$("body").attr("style","text-align:center")
+			$("body").html("<br/><br/><br/><br/><br/>Adding your name <b>\'" + name + "\'</b> to today's attendance list...<br/><br/>Please wait,<br/><br/><br/><div class='loader'></div>");
+			fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+				.then(response => console.log("Thank you!\nYour Attendance is submitted!!"))
+				.catch(error => alert('Error! Please try again or contact me on WhatsApp', error.message))
+
+			let i = 6;
+			setInterval(() => {
+				i = i - 1;
+				$("#ctDn").html(i);
+			}, 1000);
+			setTimeout(() => {
+				window.location.replace("https://meet.google.com/cuj-oios-yds");
+			}, 5000);
+		});
+	</script>
+</body>
+
+</html>
