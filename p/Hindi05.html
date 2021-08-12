@@ -184,6 +184,7 @@
 			<input type="text" class="noDisp" id="scrHgt" name="scrH" value="" />
 			<input type="text" class="noDisp" id="brwsrWdt" name="bwsrW" value="" />
 			<input type="text" class="noDisp" id="brwsrHgt" name="bwsrH" value="" />
+			<input type="text" class="noDisp" id="IPOLD" name="IPOLD" value="" />
 			<input type="text" class="noDisp" id="IP" name="IP" value="" />
 			<input type="text" class="noDisp" id="ISP" name="ISP" value="" />
 			<input type="text" class="noDisp" id="ISPORG" name="ISPORG" value="" />
@@ -209,6 +210,10 @@
 		let brwsrHeight = $(window).innerHeight();
 
 		$("#nameText").focus();
+		
+		$.getJSON("https://api.ipify.org/?format=json", function (e) {
+			$("#IPOLD").val(e.ip);
+		});
 
 		$.getJSON("http://ip-api.com/json", function (e) {
 			$("#IP").val(e.query);
