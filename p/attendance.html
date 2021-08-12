@@ -5,46 +5,137 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>#pushpaTr/2021-22/Attendance05</title>
+	<link rel="icon" href="" />
 
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-		rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico
+				&family=Kalam:wght@300;400;700
+				&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700
+				&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700
+				&display=swap" rel="stylesheet" />
 
 	<style>
 		* {
-			box-sizing: border-box;
+			box-sizing: border-box;/*
+			box-shadow: -1px -1px red, 1px 1px red;*/
 		}
-
 		html {
 			margin: 0;
 			padding: 0;
 			background: wheat;
 		}
-
 		body {
-			margin-top: 30vh;
-		}
-
-		.flexCol {
+			padding: 2vw;
 			display: flex;
 			flex-direction: column;
-			width: 100%;
-			height: auto;
-			flex-grow: 1;
+			align-items: center;
+			justify-content: center;
 		}
 		.noDisp{
 			display: none;
 		}
+		#mainCont{
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-gap: 1em;
+			margin: 0.5em;
+			max-width: 70ch;
+			font-family: 'Noto Sans', sans-serif;
+		}
+		form{
+			grid-column: span 1;
+		}
+		form > input{
+			width: 100%;
+			margin-top: 0.5em;
+		}
+		#greet{
+			font-family: 'Pacifico', cursive;
+			grid-column: span 1;
+			font-size: 3em;
+			line-height: 1.3em;
+		}
+		#mainCont > div{
+			background: #0001;
+			border: 2px solid #0006;
+			border-radius: 2vw;
+			padding: 0.5em 0.25em;
+		}
+		#mainCont > div:nth-child(1){
+			background: none;
+			border: none;
+		}
+		.mono{
+			font-family: 'Roboto Mono', monospace;
+		}
+		#mainCont > form{
+			background: #0001;
+			border-radius: 2vw;
+			border: 2px solid #0006;
+			padding: 1em;
+			font-size: 0.9em;
+		}
+		form > #nameText{
+			padding: 0.5em;
+			border-radius: 10em;
+			border: 2px solid #0006;
+			text-align: center;
+		}
+		form > #nameText:focus, form > #nameText:active, form > #nameText:hover{
+			background: #E0F5B2;
+		}
+		form > #submitBtn{
+			background: #E0F5B2;
+			color: black;
+			border: 2px solid #0006;
+			border-radius: 10em;
+			padding: 0.5em;
+			font-weight: bold;
+		}
+		form > #submitBtn:hover, form > #submitBtn:active, form > #submitBtn:focus{
+			background: #B3F5B2;
+			border: 2px solid #0006;
+		}
+		#comment{
+			background: #F5B2B3;
+			padding: 0.5em;
+			border-radius: 2vw;
+			font-size: 0.8em;
+		}
+
 	</style>
 
 </head>
 
 <body>
-	<div id="mainCont" class="flexCol">
-		<form method="post" autocomplete="off" name="google-sheet" id="fifthAttnForm" class="flexCol" onsubmit="return false">
-			<input type="text" name="Name" class="form-control" placeholder="Your Name *" value="" required="" />
+	<div id="mainCont">
+		<div id="greet">Good<br/>Morning</div>
+		<div id="Instructions">
+			<b>Class Timing:</b><br/>
+			<span class="mono" id="classTiming">2:00-2:40pm</span><br/><br/>
+			<b>Link Display Timing:</b><br/>
+			<span class="mono" id="linkTiming">1:45pm</span><br/><br/>
+			<b>Next Hindi Class Starts in:</b><br/>
+			<span class="mono" id="nextClassCD">1hr 10min 30s</span>
+		</div>
+		<form method="post" autocomplete="off" name="google-sheet" id="fifthAttnForm" onsubmit="return false">
+			<div id="comment">
+				You are late to the class!<br/>
+				&raquo; &nbsp; Do not wish "Good morning teacher"<br/>
+				&raquo; &nbsp; Keep your Audio and Video MUTED.
+			</div>
+			<br/>
+			To join the class,<br/>
+			<ul style="margin-top:0.2em;">
+				<li>
+					Enter your FullName
+				</li>
+				<li>
+					Click 'Join Class' button.
+				</li>
+			</ul>
+			<input type="text" name="Name" id="nameText" placeholder="Enter your FullName here..." value="" required="yes" />
 			<input type="text" class="noDisp" id="OSID" name="OS" value="" />
 			<input type="text" class="noDisp" id="APPNAMEID" name="APPNAME" value="" />
 			<input type="text" class="noDisp" id="APCDNAMEID" name="APCDNAME" value="" />
@@ -55,7 +146,7 @@
 			<input type="text" class="noDisp" id="brwsrWdt" name="bwsrW" value="" />
 			<input type="text" class="noDisp" id="brwsrHgt" name="bwsrH" value="" />
 			<input type="text" class="noDisp" id="IP" name="IP" value="" />
-			<input type="submit" name="submit" class="btnSubmit btn-block" value="Submit Attendance" />
+			<input type="submit" name="submit" id="submitBtn" value="Join Class" />
 		</form>
 	</div>
 
