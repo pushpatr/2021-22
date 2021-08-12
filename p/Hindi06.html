@@ -34,6 +34,7 @@
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
+			font-family: 'Noto Sans', sans-serif;
 		}
 
 		.noDisp {
@@ -127,13 +128,13 @@
 		}
 
 		.loader {
-			border: 16px solid #f3f3f3;
+			border: 5px solid #0003;
 			/* Light grey */
-			border-top: 16px solid #3498db;
+			border-top: 5px solid #3498db;
 			/* Blue */
 			border-radius: 50%;
-			width: 120px;
-			height: 120px;
+			width: 4em;
+			height: 4em;
 			animation: spin 2s linear infinite;
 		}
 
@@ -188,12 +189,8 @@
 		let scrHeight = $(window).height();
 		let brwsrWidth = $(window).innerWidth();
 		let brwsrHeight = $(window).innerHeight();
-		$(document).ready(function () {
-			$('#nameText').trigger('click');
-		});
-		$("#nameText").click(function () {
-			$("#nameText").focus();
-		});
+
+		$("#nameText").focus();
 
 		$.getJSON("https://api.ipify.org/?format=json", function (e) {
 			$("#IP").val(e.ip);
@@ -212,8 +209,10 @@
 		const form = document.forms['google-sheet'];
 
 		$("#fifthAttnForm").submit(function (e) {
+			let name = $("#nameText").val();
 			e.preventDefault();
-			$("body").html("<br/><br/><br/><br/><br/>Please wait,<br/><div class='loader'></div>");
+			$("body").attr("style","text-align:center")
+			$("body").html("<br/><br/><br/><br/><br/>Adding your name <b>\'" + name + "\'</b> to today's attendance list...<br/><br/>Please wait,<br/><br/><br/><div class='loader'></div>");
 			fetch(scriptURL, { method: 'POST', body: new FormData(form) })
 				.then(response => console.log("Thank you!\nYour Attendance is submitted!!"))
 				.catch(error => alert('Error! Please try again or contact me on WhatsApp', error.message))
