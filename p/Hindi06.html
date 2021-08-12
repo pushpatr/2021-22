@@ -145,6 +145,7 @@
 		let scrHeight = $(window).height();
 		let brwsrWidth = $(window).innerWidth();
 		let brwsrHeight = $(window).innerHeight();
+		$("#nameText").focus();
 
 		$.getJSON("https://api.ipify.org/?format=json", function(e) {
 			$("#IP").val(e.ip);
@@ -179,7 +180,6 @@
 			}, 5000);
 		});
 	</script>
-	<script src="./atVJ.js"></script>
 </body>
 
 </html>
