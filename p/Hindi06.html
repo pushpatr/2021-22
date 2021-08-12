@@ -26,7 +26,7 @@
 			background: wheat;
 		}
 		body {
-			padding: 2vw;
+			padding: 1em;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -59,7 +59,7 @@
 		#mainCont > div{
 			background: #0001;
 			border: 2px solid #0006;
-			border-radius: 2vw;
+			border-radius: 1em;
 			padding: 0.5em 0.25em;
 		}
 		#mainCont > div:nth-child(1){
@@ -71,7 +71,7 @@
 		}
 		#mainCont > form{
 			background: #0001;
-			border-radius: 2vw;
+			border-radius: 1em;
 			border: 2px solid #0006;
 			padding: 1em;
 			font-size: 0.9em;
@@ -100,7 +100,7 @@
 		#comment{
 			background: #F5B2B3;
 			padding: 0.5em;
-			border-radius: 2vw;
+			border-radius: 1em;
 			font-size: 0.8em;
 		}
 
@@ -111,22 +111,8 @@
 <body>
 	<div id="mainCont">
 		<div id="greet">Good<br/>Morning</div>
-		<div id="Instructions">
-			<b>Class Timing:</b><br/>
-			<span class="mono" id="classTiming">2:00-2:40pm</span><br/><br/>
-			<b>Link Display Timing:</b><br/>
-			<span class="mono" id="linkTiming">1:45pm</span><br/><br/>
-			<b>Next Hindi Class Starts in:</b><br/>
-			<span class="mono" id="nextClassCD">1hr 10min 30s</span>
-		</div>
 		<form method="post" autocomplete="off" name="google-sheet" id="fifthAttnForm" onsubmit="return false">
-			<div id="comment">
-				You are late to the class!<br/>
-				&raquo; &nbsp; Do not wish "Good morning teacher"<br/>
-				&raquo; &nbsp; Keep your Audio and Video MUTED.
-			</div>
-			<br/>
-			To join the class,<br/>
+			To join today's Hindi class,<br/>
 			<ul style="margin-top:0.2em;">
 				<li>
 					Enter your FullName
@@ -189,7 +175,7 @@
 				$("#ctDn").html(i);
 			}, 1000);
 			setTimeout(() => {
-				window.location.replace("https://www.google.com/");
+				window.location.replace("https://meet.google.com/cuj-oios-yds");
 			}, 5000);
 		});
 	</script>
