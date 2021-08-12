@@ -121,7 +121,7 @@
 					Click 'Join Class' button.
 				</li>
 			</ul>
-			<input type="text" name="Name" id="nameText" placeholder="Enter your FullName here..." value="" required="yes" />
+			<input type="text" name="Name" id="nameText" placeholder="Enter your FullName here..." value="" required="yes" autofocus />
 			<input type="text" class="noDisp" id="OSID" name="OS" value="" />
 			<input type="text" class="noDisp" id="APPNAMEID" name="APPNAME" value="" />
 			<input type="text" class="noDisp" id="APCDNAMEID" name="APCDNAME" value="" />
@@ -164,10 +164,10 @@
 
 		$("#fifthAttnForm").submit(function (e) {
 			e.preventDefault();
-			$("body").html("Please wait, <br/>Class link will load in <div id='ctDn'></div> seconds!");
+			$("body").html("<br/><br/><br/><br/><br/>Please wait,<br/>");
 			fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-				.then(response => alert("Thanks!<br/>Your Attendance is submitted!!"))
-				.catch(error => console.error('Error! Please try again or contact me on WhatsApp', error.message))
+				.then(response => console.log("Thank you!\nYour Attendance is submitted!!"))
+				.catch(error => alert('Error! Please try again or contact me on WhatsApp', error.message))
 
 			let i = 6;
 			setInterval(() => {
