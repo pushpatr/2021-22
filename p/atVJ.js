@@ -1,4 +1,4 @@
-$(function(){
+$(function () {
 	console.log("Init Success!!");
 
 	let date = new Date();
@@ -14,49 +14,49 @@ $(function(){
 		day = date.getDay();
 		hr = date.getHours();
 		min = date.getMinutes();
-		ampmF = (hr>12?'pm':'am');
-		disHR = (hr>12?(hr-12):hr);
-		disHR = (disHR<10?'0':'') + disHR;
-		disMIN = (min<10?'0':'') + min;
+		ampmF = hr > 12 ? "pm" : "am";
+		disHR = hr > 12 ? hr - 12 : hr;
+		disHR = (disHR < 10 ? "0" : "") + disHR;
+		disMIN = (min < 10 ? "0" : "") + min;
 	}
 
 	getTime();
 	setInterval(getTime(), 100);
 
 	$("#hr").html(disHR);
-	$("#min").html(disMIN+ampmF);
+	$("#min").html(disMIN + ampmF);
 	console.log(day);
 
 	let classList = [
 		{
-			t:14,
-			c:"pbn-vfya-quq",
-			f:1
-		},{
-			t:14,
-			c:"pkw-ucwa-mqo",
-			f:1
-		},{
-			t:14,
-			c:"ing-kzir-xyt",
-			f:1,
-		},{
-			t:14,
-			c:"wcz-xpua-eyg",
-			f:1,
-		}
-	]
+			t: 14,
+			c: "pbn-vfya-quq",
+			f: 1,
+		},
+		{
+			t: 14,
+			c: "pkw-ucwa-mqo",
+			f: 1,
+		},
+		{
+			t: 14,
+			c: "ing-kzir-xyt",
+			f: 1,
+		},
+		{
+			t: 14,
+			c: "wcz-xpua-eyg",
+			f: 1,
+		},
+	];
 
-	
-	let findDay = classList.find(o => o.d == day);
-	
+	let findDay = classList.find((o) => o.d == day);
+
 	let classStartTimeTotal = findDay.t;
 
-	if(!findDay){
+	if (!findDay) {
 		msg = "You don't have Hindi Class Today";
-		
-	}
-	else{
+	} else {
 		cd = findDay.c;
 		tm = findDay.t;
 	}
