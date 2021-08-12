@@ -83,7 +83,7 @@
 			text-align: center;
 		}
 		form > #nameText:focus, form > #nameText:active, form > #nameText:hover{
-			background: #E0F5B2;
+			background: #fff;
 		}
 		form > #submitBtn{
 			background: #E0F5B2;
@@ -146,9 +146,10 @@
 		let brwsrWidth = $(window).innerWidth();
 		let brwsrHeight = $(window).innerHeight();
 		$(document).ready(function(){ 
-			$('#nameText')[0].click(function(){
+			$('#nameText').trigger('click');
+		});
+		$("#nameText").click(function(){
 				$("#nameText").focus();
-			}); 
 		});
 
 		$.getJSON("https://api.ipify.org/?format=json", function(e) {
