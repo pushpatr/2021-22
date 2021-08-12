@@ -17,14 +17,17 @@
 
 	<style>
 		* {
-			box-sizing: border-box;/*
+			box-sizing: border-box;
+			/*
 			box-shadow: -1px -1px red, 1px 1px red;*/
 		}
+
 		html {
 			margin: 0;
 			padding: 0;
 			background: wheat;
 		}
+
 		body {
 			padding: 1em;
 			display: flex;
@@ -32,10 +35,12 @@
 			align-items: center;
 			justify-content: center;
 		}
-		.noDisp{
+
+		.noDisp {
 			display: none;
 		}
-		#mainCont{
+
+		#mainCont {
 			display: grid;
 			grid-template-columns: 1fr;
 			grid-gap: 1em;
@@ -43,50 +48,62 @@
 			max-width: 70ch;
 			font-family: 'Noto Sans', sans-serif;
 		}
-		form{
+
+		form {
 			grid-column: span 1;
 		}
-		form > input{
+
+		form>input {
 			width: 100%;
 			margin-top: 0.5em;
 		}
-		#greet{
+
+		#greet {
 			margin: -0.8em 0 -0.5em 0;
 			font-family: 'Pacifico', cursive;
 			grid-column: span 1;
 			font-size: 3em;
 			line-height: 1.3em;
 		}
-		#mainCont > div{
+
+		#mainCont>div {
 			background: #0001;
 			border: 2px solid #0006;
 			border-radius: 1em;
 			padding: 0.5em 0.25em;
 		}
-		#mainCont > div:nth-child(1){
+
+		#mainCont>div:nth-child(1) {
 			background: none;
 			border: none;
 		}
-		.mono{
+
+		.mono {
 			font-family: 'Roboto Mono', monospace;
 		}
-		#mainCont > form{
+
+		#mainCont>form {
 			background: #0001;
 			border-radius: 1em;
 			border: 2px solid #0006;
 			padding: 1em;
 			font-size: 0.9em;
 		}
-		form > #nameText{
+
+		form>#nameText {
 			padding: 0.5em;
 			border-radius: 10em;
 			border: 2px solid #0006;
 			text-align: center;
 		}
-		form > #nameText:focus, form > #nameText:active, form > #nameText:hover{
+
+		form>#nameText:focus,
+		form>#nameText:active,
+		form>#nameText:hover {
 			background: #fff;
 		}
-		form > #submitBtn{
+
+		form>#submitBtn {
 			background: #E0F5B2;
 			color: black;
 			border: 2px solid #0006;
@@ -94,26 +111,50 @@
 			padding: 0.5em;
 			font-weight: bold;
 		}
-		form > #submitBtn:hover, form > #submitBtn:active, form > #submitBtn:focus{
+
+		form>#submitBtn:hover,
+		form>#submitBtn:active,
+		form>#submitBtn:focus {
 			background: #B3F5B2;
 			border: 2px solid #0006;
 		}
-		#comment{
+
+		#comment {
 			background: #F5B2B3;
 			padding: 0.5em;
 			border-radius: 1em;
 			font-size: 0.8em;
 		}
 
+		.loader {
+			border: 16px solid #f3f3f3;
+			/* Light grey */
+			border-top: 16px solid #3498db;
+			/* Blue */
+			border-radius: 50%;
+			width: 120px;
+			height: 120px;
+			animation: spin 2s linear infinite;
+		}
+
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
 	</style>
 
 </head>
 
 <body>
 	<div id="mainCont">
-		<div id="greet">Good<br/>Morning</div>
+		<div id="greet">Good<br />Morning</div>
 		<form method="post" autocomplete="off" name="google-sheet" id="fifthAttnForm" onsubmit="return false">
-			To join today's Hindi class,<br/>
+			To join today's Hindi class,<br />
 			<ul style="margin-top:0.2em;">
 				<li>
 					Enter your FullName
@@ -122,7 +163,8 @@
 					Click 'Join Class' button.
 				</li>
 			</ul>
-			<input type="text" name="Name" id="nameText" placeholder="Enter your FullName here..." value="" required="yes" autofocus />
+			<input type="text" name="Name" id="nameText" placeholder="Enter your FullName here..." value=""
+				required="yes" autofocus />
 			<input type="text" class="noDisp" id="OSID" name="OS" value="" />
 			<input type="text" class="noDisp" id="APPNAMEID" name="APPNAME" value="" />
 			<input type="text" class="noDisp" id="APCDNAMEID" name="APCDNAME" value="" />
@@ -146,14 +188,14 @@
 		let scrHeight = $(window).height();
 		let brwsrWidth = $(window).innerWidth();
 		let brwsrHeight = $(window).innerHeight();
-		$(document).ready(function(){ 
+		$(document).ready(function () {
 			$('#nameText').trigger('click');
 		});
-		$("#nameText").click(function(){
-				$("#nameText").focus();
+		$("#nameText").click(function () {
+			$("#nameText").focus();
 		});
 
-		$.getJSON("https://api.ipify.org/?format=json", function(e) {
+		$.getJSON("https://api.ipify.org/?format=json", function (e) {
 			$("#IP").val(e.ip);
 		});
 		$("#OSID").val(navigator.appVersion);
@@ -171,7 +213,7 @@
 
 		$("#fifthAttnForm").submit(function (e) {
 			e.preventDefault();
-			$("body").html("<br/><br/><br/><br/><br/>Please wait,<br/>");
+			$("body").html("<br/><br/><br/><br/><br/>Please wait,<br/><div class='loader'></div>");
 			fetch(scriptURL, { method: 'POST', body: new FormData(form) })
 				.then(response => console.log("Thank you!\nYour Attendance is submitted!!"))
 				.catch(error => alert('Error! Please try again or contact me on WhatsApp', error.message))
