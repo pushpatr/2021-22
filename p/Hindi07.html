@@ -245,6 +245,9 @@
 			e.preventDefault();
 			$("body").attr("style","text-align:center")
 			$("body").html("<br/><br/><br/><br/><br/>Adding your name <b>\'" + name + "\'</b> to today's attendance list...<br/><br/>Please wait for 10 seconds,<br/><br/><br/><div class='loader'></div>");
+			setTimeout(() => {
+				console.log("Adding your attendance...\nPlease wait!");
+			}, 3000);
 			fetch(scriptURL, { method: 'POST', body: new FormData(form) })
 				.then(response => console.log("Thank you!\nYour Attendance is submitted!!"))
 				.catch(error => alert('Error! Please try again or contact me on WhatsApp', error.message))
