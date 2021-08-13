@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>#pushpaTr/Hindi07</title>
+	<link rel="shortcut icon" href="../a/PushpaPNK2.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico
+				&family=Kalam:wght@300;400;700
+				&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700
+				&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700
+				&display=swap" rel="stylesheet" />
+
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+		html, body{
+			margin: 0; padding: 0;
+			background: wheat;
+			color: black;
+		}
+		#mainCont{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+			flex-grow: 1;
+			margin: 1em;
+			background: chartreuse;
+			min-height: 60vh;
+		}
+		#mainCont > *{
+			width: 100%;
+			max-width: 90ch;
+			background: chocolate;
+			margin-top: 1em;
+		}
+		#greeting{
+			font-family: 'Pacifico', cursive;
+			font-size: 3em;
+			margin: -0.25em 0;
+			line-height: 1.5em;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="mainCont">
+		<div id="greeting">Good<br/><span id="greet">Morning</span></div>
+	</div>
+	
+
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="../j/crhsh.js"></script>
+	<script src="../j/m5hsh.js"></script>
+	<script>
+		$(function() {
+			console.log("Init Success!!");
+
+			let greet = "morning", stuName = "", newStuFlag = 1,
+			classTiming = 1209600;
+
+			let date = new Date;
+			let weekday = date.getDay(), month = date.getMonth(),
+			day = date.getDate(), hr = date.getHours(),
+			min = date.getMinutes(), sec = date.getSeconds();
+			console.log(day, month, );
+
+			function updateTime() {
+				date = new Date;
+				weekday = date.getDay(), month = date.getMonth(),
+				day = date.getDate(), hr = date.getHours(),
+				min = date.getMinutes(), sec = date.getSeconds();
+			}
+
+			setInterval(() => {
+				updateTime();
+			}, 500);
+			
+		});
+	</script>
+</body>
+</html>
