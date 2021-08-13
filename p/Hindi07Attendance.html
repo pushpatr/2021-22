@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,100 +16,298 @@
 				&display=swap" rel="stylesheet" />
 
 	<style>
-		*{
+		* {
 			box-sizing: border-box;
 		}
-		html, body{
-			margin: 0; padding: 0;
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
 			background: wheat;
 			color: black;
+			font-family: 'Noto Sans', sans-serif;
 		}
-		#mainCont{
+
+		#mainCont {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: flex-start;
 			flex-grow: 1;
 			margin: 1em;
-			background: chartreuse;
 			min-height: 60vh;
 		}
-		#mainCont > *{
+
+		#mainCont>* {
 			width: 100%;
 			max-width: 90ch;
-			background: chocolate;
 			margin-top: 1em;
 		}
-		#greeting{
+
+		#greeting {
 			font-family: 'Pacifico', cursive;
-			font-size: 3em;
-			margin: -0.25em 0;
+			font-size: 1.5em;
 			line-height: 1.5em;
+			margin-top: 0.5em;
+		}
+
+		#name {
+			font-family: 'Kalam', cursive;
+		}
+
+		#pageHead {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			font-family: 'Noto Sans', sans-serif;
+
+			padding: 0.25em 1em;
+			margin-top: 0em;
+			border-bottom: 4px solid #000;
+		}
+
+		#mainCont img {
+			display: flex;
+			width: 2em;
+			height: auto;
+			margin-right: 1em;
+		}
+
+		.mono {
+			font-family: 'Roboto Mono', monospace;
+		}
+
+		#classDetails {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 1em;
+		}
+
+		#classDetails>div {
+			padding: 1em 0.75em;
+			border-radius: 10pt;
+			background: #0002;
+		}
+
+		form {
+			background: #0002;
+			padding: 1em;
+			border-radius: 10pt;
+			border: 2px solid #0006;
+			box-shadow: 0 0 15px #0006;
+			animation: heart 2s infinite;
+		}
+
+		input {
+			width: 100%;
+			padding: 0.25em;
+			text-align: center;
+			border-radius: 10em;
+			border: none;
+			font-size: 1.1em;
+			margin-bottom: 1em;
+		}
+
+		.noDisp,
+		form>input.noDisp {
+			display: none;
+			font-size: 1pt;
+			width: 1pt;
+			height: 1pt;
+		}
+
+		form>#submitBtn {
+			background: #E0F5B2;
+			color: black;
+			border: 2px solid #0006;
+			border-radius: 10em;
+			padding: 0.5em;
+			font-weight: bold;
+			/*animation: heartBeat 20s infinite;*/
+		}
+
+		form>#submitBtn:hover,
+		form>#submitBtn:active,
+		form>#submitBtn:focus {
+			background: #B3F5B2;
+			border: 2px solid #0006;
+		}
+
+		@keyframes heart {
+			0% {
+				border: 2px solid #0000;
+				box-shadow: 0 0 15px #0000;
+			}
+			15% {
+				border: 2px solid #0006;
+				box-shadow: 0 0 15px #0006;
+			}
+			30% {
+				border: 2px solid #0000;
+				box-shadow: 0 0 15px #0000;
+			}
+			45% {
+				border: 2px solid #0006;
+				box-shadow: 0 0 15px #0006;
+			}
+			60% {
+				border: 2px solid #0000;
+				box-shadow: 0 0 15px #0000;
+			}
+			100% {
+				border: 2px solid #0000;
+				box-shadow: 0 0 15px #0000;
+			}
+		}
+
+		@keyframes heartBeat {
+			10% {
+				background: #d2f8df;
+			}
+
+			20% {
+				background: #fefff5;
+			}
+
+			30% {
+				background: #c5eafa;
+			}
+
+			40% {
+				background: #faf8de;
+			}
+
+			50% {
+				background: #cef9ee;
+			}
+
+			60% {
+				background: #fefff5;
+			}
+
+			70% {
+				background: #fdeafd;
+			}
 		}
 	</style>
 </head>
+
 <body>
 
 	<div id="mainCont">
-		<div id="greeting">Good<br/><span id="greet">Morning</span></div>
+		<div id="greeting">Good <span id="greet">Morning</span>,</div>
+		<div id="classDetails">
+			<div>
+				<b>Subject:</b><br />
+				<span id="classSub" class="mono">Hindi</span>
+			</div>
+			<div>
+				<b>Teacher:</b><br />
+				<span id="classTr" class="mono">Pushpa J</span>
+			</div>
+			<div style="grid-column: span 2;">
+				<b>Student:</b> &nbsp; (#<span id="devID" class="mono">ec31ae0e</span>)<br />
+				<span id="stuName" class="mono">Ulhaas Ahuja</span>
+			</div>
+			<div>
+				<b>Class Timing:</b><br />
+				<span id="classTime" class="mono">2:00-2:40pm</span>
+			</div>
+			<div>
+				<b>Joining Time:</b><br />
+				<span id="linkTime" class="mono">1:45pm</span><br />
+			</div>
+		</div>
+		<form action="">
+			<input id="NAME" name="NAME" placeholder="Enter your NAME here..." type="text" value="" required="yes"
+				autofocus />
+			<input id="SURNAME" name="SURNAME" placeholder="Enter your SURNAME here..." type="text" value=""
+				required="yes" />
+			<input type="text" class="noDisp" id="StuID" name="StuID" value="" />
+			<input type="text" class="noDisp" id="DevID" name="DevID" value="" />
+			<input type="text" class="noDisp" id="OSID" name="OS" value="" />
+			<input type="text" class="noDisp" id="APPNAMEID" name="APPNAME" value="" />
+			<input type="text" class="noDisp" id="APCDNAMEID" name="APCDNAME" value="" />
+			<input type="text" class="noDisp" id="NAVIPLTFID" name="NAVIPLTF" value="" />
+			<input type="text" class="noDisp" id="MAXPTSID" name="MAXPTS" value="" />
+			<input type="text" class="noDisp" id="scrWdt" name="scrW" value="" />
+			<input type="text" class="noDisp" id="scrHgt" name="scrH" value="" />
+			<input type="text" class="noDisp" id="brwsrWdt" name="bwsrW" value="" />
+			<input type="text" class="noDisp" id="brwsrHgt" name="bwsrH" value="" />
+			<input type="text" class="noDisp" id="IPOLD" name="IPOLD" value="" />
+			<input type="text" class="noDisp" id="IP" name="IP" value="" />
+			<input type="text" class="noDisp" id="ISP" name="ISP" value="" />
+			<input type="text" class="noDisp" id="ISPORG" name="ISPORG" value="" />
+			<input type="text" class="noDisp" id="ISPAS" name="ISPAS" value="" />
+			<input type="text" class="noDisp" id="ZIP" name="ZIP" value="" />
+			<input type="text" class="noDisp" id="CITY" name="CITY" value="" />
+			<input type="text" class="noDisp" id="REGION" name="REGION" value="" />
+			<input type="text" class="noDisp" id="REGCD" name="REGCD" value="" />
+			<input type="text" class="noDisp" id="LAT" name="LAT" value="" />
+			<input type="text" class="noDisp" id="LONG" name="LONG" value="" />
+			<input type="submit" name="submit" id="submitBtn" value="Join Class" />
+		</form>
 	</div>
-	
 
-	
+
+
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="../j/crhsh.js"></script>
 	<script src="../j/m5hsh.js"></script>
 	<script>
-		$(function() {
+		$(function () {
 			console.log("Init Success!!");
 
 			let greet = "morning", stuName = "", newStuFlag = 1,
-			classTiming = 1209600;
+				classTiming = 1209600;
 
 			let classList = [
 				{
-					d:0,
-					c:"",
-				},{
-					d:1,
-					c:"",
-				},{
-					d:2,
-					c:"woo-xecm-bdr",
-				},{
-					d:3,
-					c:"tes-bspu-pat",
-				},{
-					d:4,
-					c:"",
-				},{
-					d:5,
-					c:"xrh-ikby-cfy",
-				},{
-					d:6,
-					c:"sck-gcvs-xzy",
+					c: "",
+				}, {
+					c: "",
+				}, {
+					t: 11,
+					c: "woo-xecm-bdr",
+				}, {
+					t: 13,
+					c: "tes-bspu-pat",
+				}, {
+					c: "",
+				}, {
+					t: 10,
+					c: "xrh-ikby-cfy",
+				}, {
+					t: 11,
+					c: "sck-gcvs-xzy",
 				}
 			];
 
 			let date = new Date;
 			let weekday = date.getDay(), month = date.getMonth(),
-			day = date.getDate(), hr = date.getHours(),
-			min = date.getMinutes(), sec = date.getSeconds();
-			console.log(day, month, );
+				day = date.getDate(), hr = date.getHours(),
+				min = date.getMinutes(), sec = date.getSeconds();
+			console.log(day, month,);
 
 			function updateTime() {
 				date = new Date;
 				weekday = date.getDay(), month = date.getMonth(),
-				day = date.getDate(), hr = date.getHours(),
-				min = date.getMinutes(), sec = date.getSeconds();
+					day = date.getDate(), hr = date.getHours(),
+					min = date.getMinutes(), sec = date.getSeconds();
+
+
 			}
 
 			setInterval(() => {
 				updateTime();
+
 			}, 500);
 
 		});
 	</script>
 </body>
+
 </html>
