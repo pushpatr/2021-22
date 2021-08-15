@@ -9,7 +9,7 @@ $(function() {
 		hr = date.getHours(), min = date.getMinutes(), sec = date.getSeconds(), ms = date.getMilliseconds(), ampm = "",
 		crcSeed = "" + (Math.random() * 999999 ) + hr + min + sec + ms;
 
-	let subject = "Hindi", teacher = "PushpaJ", stuName = " &nbsp; ", devID = crc32(crcSeed), devCode = md5(crcSeed), clsCode = "";
+	let teacher = "PushpaJ", stuName = " &nbsp; ", devID = crc32(crcSeed), devCode = md5(crcSeed), clsCode = "";
 
 	let visitF = localStorage.getItem("visitF"), noClassF = 0, earlyF = 0, showFormF = 0, lateF = 0, waitF = 0, subF = 0;
 
@@ -43,7 +43,7 @@ $(function() {
 
 	setInterval(() => {
 		updateTime();
-//		weekday = 1; hr = 14; min = 00;
+//		weekday = 1; hr = 13; min = 45;
 		$("#day").html(day + "/" + (mon+1) + "/" + yr);
 		$("#weekday").html(weekdayList[weekday]);
 		hr>12?$("#hr").html(hr - 12):$("#hr").html(hr);

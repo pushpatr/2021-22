@@ -40,3 +40,5 @@ let classList = [
 		c:"",
 	}
 ]
+
+let subject = "5th Hindi";

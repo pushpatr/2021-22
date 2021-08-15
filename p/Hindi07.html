@@ -26,7 +26,7 @@
 		<div id="msg"></div>
 		
 		<form method="post" autocomplete="off" name="google-sheet" id="seventhAttnForm" onsubmit="return false" class="noDisp">
-			Enter your Name, Surname then click <b>"Join Class"</b><br/><br/>
+			Enter your Name, Surname then click<br/><b>"Join Class"</b><br/><br/>
 			<input id="NAME" name="NAME" pattern="([a-zA-z\s]+){3,}" title="Enter your Name correctly!"
 				placeholder="Enter your NAME here..." type="text" value="" autocomplete="off" required="yes"
 				autofocus />
@@ -71,5 +71,35 @@
 	<script src="../j/m5hsh.js"></script>
 	<script src="../j/hindi07.js"></script>
 	<script src="../j/attn.js"></script>
+	
+	<script type="text/javascript">
+		const scriptURL = '';
+		const form = document.forms['google-sheet'];
+
+		$("#seventhAttnForm").submit(function (e) {
+			console.log("Submitted!!");
+			stuFName = $("#NAME").val();
+			stuSName = $("#SURNAME").val();
+			localStorage.setItem("stuFName", stuFName);
+			localStorage.setItem("stuSName", stuSName);
+			localStorage.setItem("stuName", stuFName + " " + stuSName);
+			stuName = localStorage.getItem("stuName");
+			$("#stuName").html(stuName);
+			$("#devIDdisp").html(localStorage.getItem("devID"));
+			e.preventDefault();
+			waitF = 1;
+			showWaitMsg();
+			fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+				.then(response => console.log("Thank you!\nYour Attendance is submitted!!"))
+				.catch(error => alert('Error! Please try again or contact me on WhatsApp', error.message))
+			setTimeout(() => {
+				subF = 1;
+				showSubmittedMsg();
+			}, 6000);
+			setTimeout(() => {
+				window.location.replace("https://meet.google.com/" + clsCode);
+			}, 30000);
+		});
+	</script>
 </body>
 </html>

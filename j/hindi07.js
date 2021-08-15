@@ -40,3 +40,5 @@ let classList = [
 		t:11
 	}
 ]
+
+let subject = "7th Hindi";
