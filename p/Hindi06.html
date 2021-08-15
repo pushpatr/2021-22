@@ -66,10 +66,83 @@
 		</form>
 	</div>
 
+<<<<<<< HEAD
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+=======
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		let scrWidth = window.screen.width;
+		let scrHeight = window.screen.height;
+		let brwsrWidth = $(window).innerWidth();
+		let brwsrHeight = $(window).innerHeight();
+
+		$("#nameText").focus();
+		
+		$.getJSON("https://api.ipify.org/?format=json", function (e) {
+			$("#IPOLD").val(e.ip);
+		});
+
+		$.getJSON("http://ip-api.com/json", function (e) {
+			$("#IP").val(e.query);
+			$("#ISP").val(e.isp);
+			$("#ISPORG").val(e.org);
+			$("#ISPAS").val(e.as);
+			$("#ZIP").val(e.zip);
+			$("#CITY").val(e.city);
+			$("#REGION").val(e.regionName);
+			$("#REGCD").val(e.region);
+			$("#LAT").val(e.lat);
+			$("#LONG").val(e.lon);
+		});
+		$("#OSID").val(navigator.appVersion);
+		$("#APPNAMEID").val(navigator.appName);
+		$("#APCDNAMEID").val(navigator.appCodeName);
+		$("#NAVIPLTFID").val(navigator.platform);
+		$("#MAXPTSID").val(navigator.maxTouchPoints);
+		$("#scrWdt").val(scrWidth);
+		$("#scrHgt").val(scrHeight);
+		$("#brwsrWdt").val(brwsrWidth);
+		$("#brwsrHgt").val(brwsrHeight);
+
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbzB5z2ga6zUrOlVvB44DvMbY9zhVjB2GuvY4_dNzFQZPxKX4rrR4NdGPQ64G13zLdEHUg/exec'
+		const form = document.forms['google-sheet'];
+
+		$("#fifthAttnForm").submit(function (e) {
+			let name = $("#nameText").val() + " " + $("#surnameText").val();
+			e.preventDefault();
+			$("body").attr("style","text-align:center")
+			$("body").html("<br/><br/><br/><br/><br/>Adding your name <b>\'" + name + "\'</b> to today's attendance list...<br/><br/>Please wait for 10 seconds,<br/><br/><br/><div class='loader'></div>");
+			setTimeout(() => {
+				console.log("Adding your attendance...\nPlease wait!");
+				
+			$("body").html("<br/><br/><br/><br/><br/>Adding your name <b>\'" + name + "\'</b> to today's attendance list...<br/><br/>Please wait for 10 seconds,<br/><br/><br/><div class='loader'></div><br/><a href='https://meet.google.com/fwo-bycz-zam'>https://meet.google.com/avz-jbbz-zwg</a>");
+			}, 3000);
+			fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+				.then(response => console.log("Thank you!\nYour Attendance is submitted!!"))
+				.catch(error => alert('Error! Please try again or contact me on WhatsApp', error.message))
+
+			let i = 6;
+			setInterval(() => {
+				i = i - 1;
+				$("#ctDn").html(i);
+			}, 1000);
+			setTimeout(() => {
+				window.location.replace("https://meet.google.com/fwo-bycz-zam");
+			}, 5000);
+		});
+	</script>
+	<script src="../j/m5hsh.js"></script>
+>>>>>>> 0013a8adf4238c4ffcc1b4c87384e41e7f52f095
 	<script src="../j/crhsh.js"></script>
 	<script src="../j/m5hsh.js"></script>
 	<script src="../j/hindi06.js"></script>
 	<script src="../j/attn.js"></script>
 </body>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0013a8adf4238c4ffcc1b4c87384e41e7f52f095
 </html>
