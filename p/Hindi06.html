@@ -1,189 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>#pushpaTr/Hindi06-Attendance</title>
-	<link rel="icon" href="" />
-
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Pacifico
-				&family=Kalam:wght@300;400;700
-				&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700
-				&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700
-				&display=swap" rel="stylesheet" />
-
-	<style>
-		* {
-			box-sizing: border-box;
-			/*
-			box-shadow: -1px -1px red, 1px 1px red;*/
-		}
-
-		html {
-			margin: 0;
-			padding: 0;
-			background: wheat;
-		}
-
-		body {
-			padding: 1em;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			font-family: 'Noto Sans', sans-serif;
-		}
-
-		.noDisp {
-			display: none;
-			font-size: 1px;
-			height: 1px;width: 1px;
-		}
-
-		#mainCont {
-			display: grid;
-			grid-template-columns: 1fr;
-			grid-gap: 1em;
-			margin: 0.5em;
-			max-width: 70ch;
-			font-family: 'Noto Sans', sans-serif;
-		}
-
-		form {
-			grid-column: span 1;
-		}
-
-		form>input {
-			width: 100%;
-			margin-top: 0.5em;
-		}
-
-		#greet {
-			margin: -0.8em 0 -0.5em 0;
-			font-family: 'Pacifico', cursive;
-			grid-column: span 1;
-			font-size: 3em;
-			line-height: 1.3em;
-		}
-
-		#mainCont>div {
-			background: #0001;
-			border: 2px solid #0006;
-			border-radius: 1em;
-			padding: 0.5em 0.25em;
-		}
-
-		#mainCont>div:nth-child(1) {
-			background: none;
-			border: none;
-		}
-
-		.mono {
-			font-family: 'Roboto Mono', monospace;
-		}
-
-		#mainCont>form {
-			background: #0001;
-			border-radius: 1em;
-			border: 2px solid #0006;
-			padding: 1em;
-			font-size: 0.9em;
-		}
-
-		form>#nameText, form>#surnameText {
-			padding: 0.5em;
-			border-radius: 10em;
-			border: 2px solid #0006;
-			text-align: center;
-		}
-
-		form>#nameText:focus,
-		form>#nameText:active,
-		form>#nameText:hover,
-		form>#surnameText:focus,
-		form>#surnameText:active,
-		form>#surnameText:hover {
-			background: #fff;
-		}
-
-		form>#submitBtn {
-			background: #E0F5B2;
-			color: black;
-			border: 2px solid #0006;
-			border-radius: 10em;
-			padding: 0.5em;
-			font-weight: bold;
-		}
-
-		form>#submitBtn:hover,
-		form>#submitBtn:active,
-		form>#submitBtn:focus {
-			background: #B3F5B2;
-			border: 2px solid #0006;
-		}
-
-		#comment {
-			background: #F5B2B3;
-			padding: 0.5em;
-			border-radius: 1em;
-			font-size: 0.8em;
-		}
-
-		.loader {
-			border: 5px solid #0003;
-			/* Light grey */
-			border-top: 5px solid #3498db;
-			/* Blue */
-			border-radius: 50%;
-			width: 4em;
-			height: 4em;
-			animation: spin 2s linear infinite;
-		}
-
-		@keyframes spin {
-			0% {
-				transform: rotate(0deg);
-			}
-
-			100% {
-				transform: rotate(360deg);
-			}
-		}
-	</style>
-
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+	<link rel="shortcut icon" href="../a/favicon.png" type="image/png" />
+	<title>#pushpaTr/Hindi05</title>
+	<link rel="stylesheet" href="../c/attn.css" />
 </head>
-
 <body>
 	<div id="mainCont">
-		<div id="greet">Good<br />Morning</div>
-		<form method="post" autocomplete="off" name="google-sheet" id="fifthAttnForm" onsubmit="return false">
-			To join today's Hindi class,<br />
-			<ul style="margin-top:0.2em;">
-				<li>
-					Enter your FullName and Surname
-				</li>
-				<li>
-					Click 'Join Class' button.
-				</li>
-			</ul>
-			<input type="text" name="Name" id="nameText" placeholder="Enter your NAME here..." value=""
-				required="yes" autofocus />
-			<input type="text" name="Surname" id="surnameText" placeholder="Enter your SURNAME here..." value=""
-				required="yes" />
-			<input type="text" class="noDisp" id="StuID" name="StuID" value="" />
-			<input type="text" class="noDisp" id="DevID" name="DevID" value="" />
-			<input type="text" class="noDisp" id="OSID" name="OS" value="" />
-			<input type="text" class="noDisp" id="APPNAMEID" name="APPNAME" value="" />
-			<input type="text" class="noDisp" id="APCDNAMEID" name="APCDNAME" value="" />
-			<input type="text" class="noDisp" id="NAVIPLTFID" name="NAVIPLTF" value="" />
-			<input type="text" class="noDisp" id="MAXPTSID" name="MAXPTS" value="" />
-			<input type="text" class="noDisp" id="scrWdt" name="scrW" value="" />
-			<input type="text" class="noDisp" id="scrHgt" name="scrH" value="" />
-			<input type="text" class="noDisp" id="brwsrWdt" name="bwsrW" value="" />
-			<input type="text" class="noDisp" id="brwsrHgt" name="bwsrH" value="" />
+		<div id="head">
+			<div id="greeting" class="cur">Good <span id="greet"></span>,</div>
+			<div id="today" class="mono">
+				<div id="day">15/08/21</div>
+				<div id="weekday">Monday</div>
+				<div id="dispTime"><span id="hr">12</span><span class="blink">:</span><span id="min">00</span><span id="ampm">pm</span></div>
+			</div>
+		</div>
+		<div><b>Subject:</b><br/><div id="subject" class="mono">Hindi</div></div>
+		<div><b>Teacher:</b><br/><div id="teacher" class="mono">PushpaJ</div></div>
+		<div style="grid-column: span 2;"><b>Student:</b>&nbsp;<span id="devIDdisp" class="mono">(#devID)</span><br/><div id="stuName" class="mono">" &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "</div></div>
+		<div><b>Class Timing:</b><br/><div id="classTime" class="mono">00:00</div></div>
+		<div><b>Joining Time:</b><br/><div id="linkTime" class="mono">00:00</div></div>
+		<div id="msg"></div>
+		
+		<form method="post" autocomplete="off" name="google-sheet" id="seventhAttnForm" onsubmit="return false" class="noDisp">
+			Enter your Name, Surname then click <b>"Join Class"</b><br/><br/>
+			<input id="NAME" name="NAME" pattern="([a-zA-z\s]+){3,}" title="Enter your Name correctly!"
+				placeholder="Enter your NAME here..." type="text" value="" autocomplete="off" required="yes"
+				autofocus />
+			<input id="SURNAME" name="SURNAME" pattern="([a-zA-z\s]+){1,}" title="Enter your Surname correctly!"
+				placeholder="Enter your SURNAME here..." type="text" value="" autocomplete="off" required="yes" />
+			<input type="text" class="noDisp" id="dCD" name="dCD" value="" />
+			<input type="text" class="noDisp" id="dID" name="dID" value="" />
+			<input type="text" class="noDisp" id="sID" name="sID" value="" />
+			<input type="text" class="noDisp" id="OSID" name="OSID" value="" />
+			<input type="text" class="noDisp" id="APPNAME" name="APPNAME" value="" />
+			<input type="text" class="noDisp" id="APCDNAME" name="APCDNAME" value="" />
+			<input type="text" class="noDisp" id="USRAGNT" name="USRAGNT" value="" />
+			<input type="text" class="noDisp" id="NAVIPLTF" name="NAVIPLTF" value="" />
+			<input type="text" class="noDisp" id="MAXPTS" name="MAXPTS" value="" />
+			<input type="text" class="noDisp" id="scrW" name="scrW" value="" />
+			<input type="text" class="noDisp" id="scrH" name="scrH" value="" />
+			<input type="text" class="noDisp" id="brwsrW" name="brwsrW" value="" />
+			<input type="text" class="noDisp" id="brwsrH" name="brwsrH" value="" />
 			<input type="text" class="noDisp" id="IPOLD" name="IPOLD" value="" />
 			<input type="text" class="noDisp" id="IP" name="IP" value="" />
 			<input type="text" class="noDisp" id="ISP" name="ISP" value="" />
@@ -195,93 +56,20 @@
 			<input type="text" class="noDisp" id="REGCD" name="REGCD" value="" />
 			<input type="text" class="noDisp" id="LAT" name="LAT" value="" />
 			<input type="text" class="noDisp" id="LONG" name="LONG" value="" />
+			<input type="text" class="noDisp" id="VEN" name="VEN" value="" />
+			<input type="text" class="noDisp" id="SUBVEN" name="SUBVEN" value="" />
+			<input type="text" class="noDisp" id="PRO" name="PRO" value="" />
+			<input type="text" class="noDisp" id="SUBPRO" name="SUBPRO" value="" />
+			<input type="text" class="noDisp" id="LANG" name="LANG" value="" />
+			<input type="text" class="noDisp" id="OSCPU" name="OSCPU" value="" />
 			<input type="submit" name="submit" id="submitBtn" value="Join Class" />
 		</form>
 	</div>
 
-
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-	<script type="text/javascript">
-		let scrWidth = window.screen.width;
-		let scrHeight = window.screen.height;
-		let brwsrWidth = $(window).innerWidth();
-		let brwsrHeight = $(window).innerHeight();
-
-		$("#nameText").focus();
-		
-		$.getJSON("https://api.ipify.org/?format=json", function (e) {
-			$("#IPOLD").val(e.ip);
-		});
-
-		$.getJSON("http://ip-api.com/json", function (e) {
-			$("#IP").val(e.query);
-			$("#ISP").val(e.isp);
-			$("#ISPORG").val(e.org);
-			$("#ISPAS").val(e.as);
-			$("#ZIP").val(e.zip);
-			$("#CITY").val(e.city);
-			$("#REGION").val(e.regionName);
-			$("#REGCD").val(e.region);
-			$("#LAT").val(e.lat);
-			$("#LONG").val(e.lon);
-		});
-		$("#OSID").val(navigator.appVersion);
-		$("#APPNAMEID").val(navigator.appName);
-		$("#APCDNAMEID").val(navigator.appCodeName);
-		$("#NAVIPLTFID").val(navigator.platform);
-		$("#MAXPTSID").val(navigator.maxTouchPoints);
-		$("#scrWdt").val(scrWidth);
-		$("#scrHgt").val(scrHeight);
-		$("#brwsrWdt").val(brwsrWidth);
-		$("#brwsrHgt").val(brwsrHeight);
-
-		const scriptURL = 'https://script.google.com/macros/s/AKfycbzB5z2ga6zUrOlVvB44DvMbY9zhVjB2GuvY4_dNzFQZPxKX4rrR4NdGPQ64G13zLdEHUg/exec'
-		const form = document.forms['google-sheet'];
-
-		$("#fifthAttnForm").submit(function (e) {
-			let name = $("#nameText").val() + " " + $("#surnameText").val();
-			e.preventDefault();
-			$("body").attr("style","text-align:center")
-			$("body").html("<br/><br/><br/><br/><br/>Adding your name <b>\'" + name + "\'</b> to today's attendance list...<br/><br/>Please wait for 10 seconds,<br/><br/><br/><div class='loader'></div>");
-			setTimeout(() => {
-				console.log("Adding your attendance...\nPlease wait!");
-				
-			$("body").html("<br/><br/><br/><br/><br/>Adding your name <b>\'" + name + "\'</b> to today's attendance list...<br/><br/>Please wait for 10 seconds,<br/><br/><br/><div class='loader'></div><br/><a href='https://meet.google.com/avz-jbbz-zwg'>https://meet.google.com/avz-jbbz-zwg</a>");
-			}, 3000);
-			fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-				.then(response => console.log("Thank you!\nYour Attendance is submitted!!"))
-				.catch(error => alert('Error! Please try again or contact me on WhatsApp', error.message))
-
-			let i = 6;
-			setInterval(() => {
-				i = i - 1;
-				$("#ctDn").html(i);
-			}, 1000);
-			setTimeout(() => {
-				window.location.replace("https://meet.google.com/avz-jbbz-zwg");
-			}, 5000);
-		});
-	</script>
-	<script src="../j/m5hsh.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="../j/crhsh.js"></script>
-	<script>
-		$(function() {
-			let StudentID = md5( (Math.random()*999999 + new Date()) );
-			let StuID = crc32(StudentID);
-			if (localStorage.getItem('DevID') !== null) {
-				$("#StuID").val( localStorage.getItem("StudentID") );
-				$("#DevID").val( localStorage.getItem("DevID") );
-			}
-			else {
-				localStorage.setItem("StudentID", StudentID);
-				localStorage.setItem("DevID", StuID);
-				$("#StuID").val( localStorage.getItem("StudentID") );
-				$("#DevID").val( localStorage.getItem("DevID") );
-			}
-		});
-	</script>
+	<script src="../j/m5hsh.js"></script>
+	<script src="../j/hindi06.js"></script>
+	<script src="../j/attn.js"></script>
 </body>
-
 </html>
