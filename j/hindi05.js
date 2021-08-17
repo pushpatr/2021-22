@@ -288,8 +288,7 @@ $(function() {
 	$("#sID").val(sessionStorage.getItem("sessionCode"));
 	$("#dCD").val(localStorage.getItem("devCode"));
 
-
-	const scriptURL = 'https://script.google.com/macros/s/AKfycbyqXz58gZj-AvbP7WVyUaTHF4zYWkYnKv3c7TyrWPNf5El9ePBedpuYxAiqWv9UT6nr/exec'
+	const scriptURL = 'https://script.google.com/macros/s/AKfycbyqXz58gZj-AvbP7WVyUaTHF4zYWkYnKv3c7TyrWPNf5El9ePBedpuYxAiqWv9UT6nr/exec';
 	const form = document.forms['google-sheet'];
 
 	$("#seventhAttnForm").submit(function (e) {

@@ -72,33 +72,6 @@
 	<script src="../j/hindi05.js"></script>
 	
 	<script type="text/javascript">
-		const scriptURL = 'https://script.google.com/macros/s/AKfycbyqXz58gZj-AvbP7WVyUaTHF4zYWkYnKv3c7TyrWPNf5El9ePBedpuYxAiqWv9UT6nr/exec';
-		const form = document.forms['google-sheet'];
-
-		$("#seventhAttnForm").submit(function (e) {
-			console.log("Submitted!!");
-			stuFName = $("#NAME").val();
-			stuSName = $("#SURNAME").val();
-			localStorage.setItem("stuFName", stuFName);
-			localStorage.setItem("stuSName", stuSName);
-			localStorage.setItem("stuName", stuFName + " " + stuSName);
-			stuName = localStorage.getItem("stuName");
-			$("#stuName").html(stuName);
-			$("#devIDdisp").html(localStorage.getItem("devID"));
-			e.preventDefault();
-			waitF = 1;
-			showWaitMsg();
-			fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-				.then(response => console.log("Thank you!\nYour Attendance is submitted!!"))
-				.catch(error => alert('Error! Please try again or contact me on WhatsApp', error.message))
-			setTimeout(() => {
-				subF = 1;
-				showSubmittedMsg();
-			}, 6000);
-			setTimeout(() => {
-				window.location.replace("https://meet.google.com/" + clsCode);
-			}, 30000);
-		});
 	</script>
 </body>
 </html>

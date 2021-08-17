@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
 	<link rel="shortcut icon" href="../a/favicon.png" type="image/png" />
-	<title>#pushpaTr/Hindi05</title>
+	<title>#pushpaTr/Hindi06</title>
 	<link rel="stylesheet" href="../c/attn.css" />
 </head>
 <body>
@@ -70,35 +70,5 @@
 	<script src="../j/crhsh.js"></script>
 	<script src="../j/m5hsh.js"></script>
 	<script src="../j/hindi06.js"></script>
-	<script src="../j/attn.js"></script>
-	<script type="text/javascript">
-		const scriptURL = 'https://script.google.com/macros/s/AKfycbxFspx77CHqvhNbveoT8oBQ7f3f2CgWTXV3yiZdw5Kc0EgbIp7hyssM5ZP7FwGFzTL9/exec';
-		const form = document.forms['google-sheet'];
-
-		$("#seventhAttnForm").submit(function (e) {
-			console.log("Submitted!!");
-			stuFName = $("#NAME").val();
-			stuSName = $("#SURNAME").val();
-			localStorage.setItem("stuFName", stuFName);
-			localStorage.setItem("stuSName", stuSName);
-			localStorage.setItem("stuName", stuFName + " " + stuSName);
-			stuName = localStorage.getItem("stuName");
-			$("#stuName").html(stuName);
-			$("#devIDdisp").html(localStorage.getItem("devID"));
-			e.preventDefault();
-			waitF = 1;
-			showWaitMsg();
-			fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-				.then(response => console.log("Thank you!\nYour Attendance is submitted!!"))
-				.catch(error => alert('Error! Please try again or contact me on WhatsApp', error.message))
-			setTimeout(() => {
-				subF = 1;
-				showSubmittedMsg();
-			}, 6000);
-			setTimeout(() => {
-				window.location.replace("https://meet.google.com/" + clsCode);
-			}, 30000);
-		});
-	</script>
 </body>
 </html>
