@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+	<title>Hindi06-05</title>
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+		html, body{
+			margin: 0;
+			padding: 0;
+			background: wheat;
+			font-size: 15pt;
+			font-family: 'Eczar', serif;
+		}
+		body{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 80vh;
+		}
+		#mainCont{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+			width: 100%;
+			padding-top: 8vh;
+		}
+		#head, #foot{
+			position: fixed;
+			left: 0; right: 0;
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			height: 8vh;
+			background: #0009;
+			color: wheat;
+			align-items: center;
+			justify-content: center;
+			font-weight: bold;
+		}
+		#head{
+			top:0;
+		}
+		#foot{
+			bottom: 0;
+		}
+		#foot > div{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 8vh;
+		}
+		#splitCont{
+			font-size: 2em;
+			margin-top: -0.5em;
+			padding: 0.25em 0;
+		}
+		#aniCont{
+			display: flex;
+			font-size: 3em;
+			flex-direction: row;
+			width: 100%;
+			flex-grow: 1;
+			background: #f008;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			animation: infinite 2s breakWord ease-in-out;
+			padding: 0.25em 0;
+		}
+		@keyframes breakWord {
+			0%{letter-spacing: 0.25em;text-indent: 0.25em;}
+			50%{letter-spacing: 0em;text-indent: 0em;}
+			100%{letter-spacing: 0em;text-indent: 0em;}
+		}
+		#splitter{
+			width: 100%;
+			display: flex;
+			background: #fff5;
+			color: #0005;
+			border: none;
+			resize: vertical;
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			font-size: 3em;
+			padding: 0.25em 0;
+			height: auto;
+			margin-top: 0vh;
+			font-family: 'Eczar', serif;
+		}
+		#splitter:focus{
+			background: #fffa;
+			color: #000;
+		}
+		#wrdCont{
+			font-size: 2em;
+			padding: 0;
+		}
+		#prvBtn{
+			transform: scaleX(-1);
+		}
+		#aniCont.smaller{
+			font-size: 2.5em;
+		}
+	</style>
+</head>
+<body>
+	<div id="mainCont">
+		<input type="text" name="splitter" id="splitter" val=""/>
+		<div id="wrdCont"></div>
+		<div id="splitCont"></div>
+		<div id="aniCont"></div>
+	</div>
+
+	<div id="head">(iii). पदेन ( ्र )</div>
+	<div id="foot">
+		<div id="prvBtn">&#10148;</div>
+		<div id="typBtn">&#128203;</div>
+		<div id="nxtBtn">&#10148;</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script>
+		$(function() {
+			let wordList = [
+				{w:"ट्रक",b:[2,6],s:[2,4]},
+				{w:"ड्रम",b:[2,6],s:[2,4]},
+				{w:"ट्रेन",b:[2,7],s:[2,5]},
+				{w:"ड्राइवर",b:[2,7,11,15],s:[2,5,7,9]},
+				{w:"मेट्रो",b:[2,7],s:[2,5]},
+				{w:"ड्रामा",b:[2,7],s:[2,5]},
+				{w:"उष्ट्र",b:[1,6,11],s:[1,4,7]},
+				{w:"राष्ट्र",b:[2,7,12],s:[2,5,8]},
+				{w:"दंष्ट्र",b:[2,7,12],s:[2,5,8]},
+				{w:" ",b:[],s:[]},
+			]
+
+			let i = 0, word = "", wordSplit = "", spaced = "";
+			function formWords() {
+				wordSplit = wordList[i].w;
+				word = wordSplit;
+				console.log(wordSplit, wordSplit.length);
+				for(const brki of wordList[i].b) {
+					wordSplit = wordSplit.substring(0,brki) + " + " + wordSplit.substring(brki, wordSplit.length);
+					console.log(wordSplit, wordSplit.length);
+				}
+				spaced = wordList[i].w;
+				for (const spi of wordList[i].s) {
+					spaced = spaced.substring(0,spi) + " " + spaced.substring(spi, spaced.length);
+				}
+				$("#wrdCont").html(word);
+				$("#splitCont").html(wordSplit);
+				$("#aniCont").html(spaced);
+				$("#splitter").val("");
+				$("#splitter").val(spaced);$("#splitter").focus();
+				$("#aniCont").removeClass("smaller");
+			}
+			let loopF = 0;
+			$('#aniCont').on('animationiteration', function (e) {
+				if (loopF == 0) {
+					$("#aniCont").html( spaced.replace(/\s/g, "") );
+					loopF = 1;
+				}
+				else{
+					$("#aniCont").html( spaced );
+					loopF = 0;
+				}
+			});
+			formWords();
+			$("#typBtn").click(function() {
+				$("#splitter").val(spaced);$("#splitter").focus();
+			});
+			console.log(i);
+			$("#nxtBtn").click(function() {
+				if(i < (wordList.length - 1)){
+				console.log(i);
+					i = i + 1;
+					formWords();
+				}
+				if (i == (wordList.length - 1) ) {
+					$("#wrdCont").html("<a href='../0605-00.html'>'र' की मात्राएँ</a>");
+				}
+			});
+			$("#prvBtn").click(function() {
+				console.log(i);
+				if(i > 0){
+					i = i - 1;
+					formWords();
+				}
+			});
+			$("#wrdCont").click(function() {
+				$("#aniCont").toggleClass("smaller");
+			});
+		});
+	</script>
+</body>
+</html>

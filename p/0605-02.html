@@ -33,6 +33,7 @@
 			align-items: center;
 			justify-content: flex-start;
 			width: 100%;
+			padding-top: 8vh;
 		}
 		#head, #foot{
 			position: fixed;
@@ -45,14 +46,13 @@
 			color: wheat;
 			align-items: center;
 			justify-content: center;
-			font-weight: bold;
-			font-size: ;
 		}
 		#head{
 			top:0;
 		}
 		#foot{
 			bottom: 0;
+			font-weight: bold;
 		}
 		#foot > div{
 			display: flex;
@@ -60,9 +60,11 @@
 			align-items: center;
 			justify-content: center;
 			width: 100%;
+			height: 8vh;
 		}
 		#splitCont{
 			font-size: 2em;
+			margin-top: -0.5em;
 			padding: 0.25em 0;
 		}
 		#aniCont{
@@ -75,11 +77,11 @@
 			text-align: center;
 			align-items: center;
 			justify-content: center;
-			animation: infinite 3s breakWord ease-in-out;
+			animation: infinite 2s breakWord ease-in-out;
 			padding: 0.25em 0;
 		}
 		@keyframes breakWord {
-			0%{letter-spacing: 10vw;text-indent: 10vw;}
+			0%{letter-spacing: 0.25em;text-indent: 0.25em;}
 			50%{letter-spacing: 0em;text-indent: 0em;}
 			100%{letter-spacing: 0em;text-indent: 0em;}
 		}
@@ -87,7 +89,7 @@
 			width: 100%;
 			display: flex;
 			background: #fff5;
-			color: black;
+			color: #0005;
 			border: none;
 			resize: vertical;
 			text-align: center;
@@ -96,41 +98,71 @@
 			font-size: 3em;
 			padding: 0.25em 0;
 			height: auto;
+			margin-top: 0vh;
+			font-family: 'Eczar', serif;
 		}
-		#wordCont{
+		#splitter:focus{
+			background: #fffa;
+			color: #000;
+		}
+		#wrdCont{
 			font-size: 2em;
 			padding: 0;
+		}
+		#prvBtn{
+			transform: scaleX(-1);
+		}
+		#aniCont.smaller{
+			font-size: 2.5em;
 		}
 	</style>
 </head>
 <body>
 	<div id="mainCont">
 		<input type="text" name="splitter" id="splitter" val=""/>
-		<div id="wrdCont">कर्म</div>
+		<div id="wrdCont"></div>
 		<div id="splitCont"></div>
 		<div id="aniCont"></div>
 	</div>
 
-	<div id="head">'र' की मात्राएँ</div>
+	<div id="head">(ii). पदेन ( ⸝ )</div>
 	<div id="foot">
-		<div id="prvBtn">P</div>
-		<div id="aniBtn">Ani</div>
-		<div id="meanBtn">अर्थ</div>
-		<div id="nxtBtn">N</div>
+		<div id="prvBtn">&#10148;</div>
+		<div id="typBtn">&#128203;</div>
+		<div id="nxtBtn">&#10148;</div>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script>
 		$(function() {
 			let wordList = [
-				{w:"कर्म",b:[1,6],s:[1,4]},
+				{w:"क्रम",b:[2,6],s:[2,4]},
+				{w:"भ्रम",b:[2,6],s:[2,4]},
+				{w:"प्रेम",b:[2,7],s:[2,5]},
+				{w:"चक्र",b:[1,6],s:[1,4]},
+				{w:"उम्र",b:[1,6],s:[1,4]},
+				{w:"सब्र",b:[1,6],s:[1,4]},
+				{w:"वज्र",b:[1,6],s:[1,4]},
+				{w:"सम्राट",b:[1,6,11],s:[1,4,7]},
+				{w:"प्रकट",b:[2,6,10],s:[2,4,6]},
+				{w:"प्रथम",b:[2,6,10],s:[2,4,6]},
+				{w:"प्रकार",b:[2,6,11],s:[2,4,7]},
+				{w:"प्रसार",b:[2,6,11],s:[2,4,7]},
+				{w:"प्रसाद",b:[2,6,11],s:[2,4,7]},
+				{w:"प्रकाश",b:[2,6,11],s:[2,4,7]},
+				{w:"प्रमाण",b:[2,6,11],s:[2,4,7]},
+				{w:"प्रणाम",b:[2,6,11],s:[2,4,7]},
+				{w:"प्रभाव",b:[2,6,11],s:[2,4,7]},
+				{w:"प्रयोग",b:[2,6,11],s:[2,4,7]},
+				{w:"प्रमोद",b:[2,6,11],s:[2,4,7]},
+				{w:"प्रवीण",b:[2,6,11],s:[2,4,7]},
+				{w:" ",b:[1],s:[1]},
 			]
-//			console.log( wordList[0].w.substring(0,wordList[0].b[0]) + " + " + wordList[0].w.substring(wordList[0].b[0], wordList[0].b[1]) + " + " + wordList[0].w.substring(wordList[0].b[1],wordList[0].length));
-//			console.log( wordList[0].w.substring(0,wordList[0].b[0]) + " " + wordList[0].w.substring(wordList[0].b[0], wordList[0].b[1]) + " " + wordList[0].w.substring(wordList[0].b[1],wordList[0].length));
-			
-			let i = 0, wordSplit = "", spaced = "";
+
+			let i = 0, word = "", wordSplit = "", spaced = "";
 			function formWords() {
 				wordSplit = wordList[i].w;
+				word = wordSplit;
 				console.log(wordSplit, wordSplit.length);
 				for(const brki of wordList[i].b) {
 					wordSplit = wordSplit.substring(0,brki) + " + " + wordSplit.substring(brki, wordSplit.length);
@@ -140,23 +172,49 @@
 				for (const spi of wordList[i].s) {
 					spaced = spaced.substring(0,spi) + " " + spaced.substring(spi, spaced.length);
 				}
+				$("#wrdCont").html(word);
 				$("#splitCont").html(wordSplit);
 				$("#aniCont").html(spaced);
+				$("#splitter").val("");
+				$("#splitter").val(spaced);$("#splitter").focus();
+				$("#aniCont").removeClass("smaller");
 			}
 			let loopF = 0;
 			$('#aniCont').on('animationiteration', function (e) {
 				if (loopF == 0) {
-					console.log("Removed");
 					$("#aniCont").html( spaced.replace(/\s/g, "") );
 					loopF = 1;
 				}
 				else{
-					console.log("Added Spaces");
 					$("#aniCont").html( spaced );
 					loopF = 0;
 				}
 			});
 			formWords();
+			$("#typBtn").click(function() {
+				$("#splitter").val(spaced);$("#splitter").focus();
+			});
+			console.log(i);
+			$("#nxtBtn").click(function() {
+				if(i < (wordList.length - 1)){
+				console.log(i);
+					i = i + 1;
+					formWords();
+				}
+				if (i == (wordList.length - 1) ) {
+					$("#wrdCont").html("<a href='0605-03.html'>iii. &nbsp;  पदेन ( ्र )</a>");
+				}
+			});
+			$("#prvBtn").click(function() {
+				console.log(i);
+				if(i > 0){
+					i = i - 1;
+					formWords();
+				}
+			});
+			$("#wrdCont").click(function() {
+				$("#aniCont").toggleClass("smaller");
+			});
 		});
 	</script>
 </body>
