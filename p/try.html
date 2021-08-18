@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
 	<title>Hindi06-05</title>
 	<style>
 		*{
@@ -13,6 +17,7 @@
 			margin: 0;
 			padding: 0;
 			background: wheat;
+			font-size: 12pt;
 		}
 		body{
 			display: flex;
@@ -133,7 +138,7 @@
 				$("#aniCont").html(spaced);
 			}
 			let loopF = 0;
-			$('#aniCont').on('webkitanimationiteration', function (e) {
+			$('#aniCont').on('animationiteration', function (e) {
 				if (loopF == 0) {
 					console.log("Removed");
 					$("#aniCont").html( spaced.replace(/\s/g, "") );
