@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hindi06-05</title>
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+		html, body{
+			margin: 0;
+			padding: 0;
+			background: wheat;
+		}
+		body{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 80vh;
+		}
+		#mainCont{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+			width: 100%;
+		}
+		#head, #foot{
+			position: fixed;
+			left: 0; right: 0;
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			height: 8vh;
+			background: #0009;
+			color: wheat;
+			align-items: center;
+			justify-content: center;
+			font-weight: bold;
+		}
+		#head{
+			top:0;
+		}
+		#foot{
+			bottom: 0;
+		}
+		#foot > div{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+		}
+		#splitCont{
+			font-size: 2em;
+			padding: 0.25em 0;
+		}
+		#aniCont{
+			display: flex;
+			font-size: 3em;
+			flex-direction: row;
+			width: 100%;
+			flex-grow: 1;
+			background: #f008;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			animation: infinite 3s breakWord ease-in-out;
+			padding: 0.25em 0;
+		}
+		@keyframes breakWord {
+			0%{letter-spacing: 10vw;text-indent: 10vw;}
+			50%{letter-spacing: 0em;text-indent: 0em;}
+			100%{letter-spacing: 0em;text-indent: 0em;}
+		}
+		#splitter{
+			width: 100%;
+			display: flex;
+			background: #fff5;
+			color: black;
+			border: none;
+			resize: vertical;
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			font-size: 3em;
+			padding: 0.25em 0;
+			height: auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="mainCont">
+		<div id="wrdCont">कर्म</div>
+		<div id="splitCont"></div>
+		<div id="aniCont"></div>
+		<input type="text" name="splitter" id="splitter"></textarea>
+	</div>
+
+	<div id="head">'र' की मात्राएँ</div>
+	<div id="foot">
+		<div id="prvBtn">P</div>
+		<div id="aniBtn">Ani</div>
+		<div id="meanBtn">अर्थ</div>
+		<div id="nxtBtn">N</div>
+	</div>
+
+	<script src="jquery-3.6.0.min.js"></script>
+	<script>
+		$(function() {
+			let wordList = [
+				{w:"कर्म",b:[1,6],s:[1,4]},
+			]
+//			console.log( wordList[0].w.substring(0,wordList[0].b[0]) + " + " + wordList[0].w.substring(wordList[0].b[0], wordList[0].b[1]) + " + " + wordList[0].w.substring(wordList[0].b[1],wordList[0].length));
+//			console.log( wordList[0].w.substring(0,wordList[0].b[0]) + " " + wordList[0].w.substring(wordList[0].b[0], wordList[0].b[1]) + " " + wordList[0].w.substring(wordList[0].b[1],wordList[0].length));
+			
+			let i = 0, wordSplit = "", spaced = "";
+			function formWords() {
+				wordSplit = wordList[i].w;
+				console.log(wordSplit, wordSplit.length);
+				for(const brki of wordList[i].b) {
+					wordSplit = wordSplit.substring(0,brki) + " + " + wordSplit.substring(brki, wordSplit.length);
+					console.log(wordSplit, wordSplit.length);
+				}
+				spaced = wordList[i].w;
+				for (const spi of wordList[i].s) {
+					spaced = spaced.substring(0,spi) + " " + spaced.substring(spi, spaced.length);
+				}
+				$("#splitCont").html(wordSplit);
+				$("#aniCont").html(spaced);
+			}
+			let loopF = 0;
+			$('#aniCont').on('webkitanimationiteration', function (e) {
+				if (loopF == 0) {
+					console.log("Removed");
+					$("#aniCont").html( spaced.replace(/\s/g, "") );
+					loopF = 1;
+				}
+				else{
+					console.log("Added Spaces");
+					$("#aniCont").html( spaced );
+					loopF = 0;
+				}
+			});
+			formWords();
+		});
+	</script>
+</body>
+</html>
