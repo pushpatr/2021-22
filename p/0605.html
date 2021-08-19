@@ -50,6 +50,7 @@
 		}
 		#head{
 			top:0;
+			font-weight: normal;
 		}
 		#foot{
 			bottom: 0;
@@ -73,7 +74,7 @@
 			flex-direction: row;
 			width: 100%;
 			flex-grow: 1;
-			background: #f008;
+			background: #fff3;
 			text-align: center;
 			align-items: center;
 			justify-content: center;
@@ -109,7 +110,7 @@
 			font-size: 2em;
 			padding: 0;
 		}
-		#prvBtn{
+		#prvBtn, #FprvBtn{
 			transform: scaleX(-1);
 		}
 		#aniCont.smaller{
@@ -127,39 +128,89 @@
 
 	<div id="head">रेफ ( ౕ )</div>
 	<div id="foot">
+		<div id="FprvBtn">&#10144;</div>
 		<div id="prvBtn">&#10148;</div>
 		<div id="typBtn">&#128203;</div>
 		<div id="nxtBtn">&#10148;</div>
+		<div id="FnxtBtn">&#10144;</div>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script>
 		$(function() {
-			let wordList = [
-				{w:"कर्म",b:[1,6],s:[1,4]},
-				{w:"सर्प",b:[1,6],s:[1,4]},
-				{w:"मर्म",b:[1,6],s:[1,4]},
-				{w:"तर्क",b:[1,6],s:[1,4]},
-				{w:"खर्च",b:[1,6],s:[1,4]},
-				{w:"गर्व",b:[1,6],s:[1,4]},
-				{w:"पर्ण",b:[1,6],s:[1,4]},
-				{w:"सर्ग",b:[1,6],s:[1,4]},
-				{w:"सूर्य",b:[2,7],s:[2,5]},
-				{w:"कार्य",b:[2,7],s:[2,5]},
-				{w:"मार्ग",b:[2,7],s:[2,5]},
-				{w:"धैर्य",b:[2,7],s:[2,5]},
-				{w:"व्यर्थ",b:[3,8],s:[3,6]},
-				{w:"दर्शन",b:[1,6,10],s:[1,4,6]},
-				{w:"दर्पण",b:[1,6,10],s:[1,4,6]},
-				{w:"अर्जुन",b:[1,6,11],s:[1,4,7]},
-				{w:"पर्वत",b:[1,6,10],s:[1,4,6]},
-				{w:"वर्तनी",b:[1,6,10],s:[1,4,6]},
-				{w:"धार्मिक",b:[2,7,12],s:[2,5,8]},
-				{w:"आदर्श",b:[1,5,10],s:[1,3,6]},
-				{w:" ",b:[1],s:[1]},
+			let wordListMaster = [
+				{
+					h:"(i). &nbsp; रेफ ( ౕ )",
+					wl:[
+						{w:" ",b:[],s:[]},
+						{w:"कर्म",b:[1,6],s:[1,4]},
+						{w:"सर्प",b:[1,6],s:[1,4]},
+						{w:"मर्म",b:[1,6],s:[1,4]},
+						{w:"तर्क",b:[1,6],s:[1,4]},
+						{w:"खर्च",b:[1,6],s:[1,4]},
+						{w:"गर्व",b:[1,6],s:[1,4]},
+						{w:"पर्ण",b:[1,6],s:[1,4]},
+						{w:"सर्ग",b:[1,6],s:[1,4]},
+						{w:"सूर्य",b:[2,7],s:[2,5]},
+						{w:"कार्य",b:[2,7],s:[2,5]},
+						{w:"मार्ग",b:[2,7],s:[2,5]},
+						{w:"धैर्य",b:[2,7],s:[2,5]},
+						{w:"व्यर्थ",b:[3,8],s:[3,6]},
+						{w:"दर्शन",b:[1,6,10],s:[1,4,6]},
+						{w:"दर्पण",b:[1,6,10],s:[1,4,6]},
+						{w:"अर्जुन",b:[1,6,11],s:[1,4,7]},
+						{w:"पर्वत",b:[1,6,10],s:[1,4,6]},
+						{w:"वर्तनी",b:[1,6,10],s:[1,4,6]},
+						{w:"धार्मिक",b:[2,7,12],s:[2,5,8]},
+						{w:"आदर्श",b:[1,5,10],s:[1,3,6]},
+						{w:" ",b:[],s:[]},
+					]
+				},
+				{
+					h:"(ii). &nbsp; पदेन ( ⸝ )",
+					wl:[
+						{w:" ",b:[],s:[]},
+						{w:"क्रम",b:[2,6],s:[2,4]},
+						{w:"भ्रम",b:[2,6],s:[2,4]},
+						{w:"प्रेम",b:[2,7],s:[2,5]},
+						{w:"चक्र",b:[1,6],s:[1,4]},
+						{w:"उम्र",b:[1,6],s:[1,4]},
+						{w:"सब्र",b:[1,6],s:[1,4]},
+						{w:"वज्र",b:[1,6],s:[1,4]},
+						{w:"सम्राट",b:[1,6,11],s:[1,4,7]},
+						{w:"प्रकट",b:[2,6,10],s:[2,4,6]},
+						{w:"प्रथम",b:[2,6,10],s:[2,4,6]},
+						{w:"प्रकार",b:[2,6,11],s:[2,4,7]},
+						{w:"प्रसार",b:[2,6,11],s:[2,4,7]},
+						{w:"प्रसाद",b:[2,6,11],s:[2,4,7]},
+						{w:"प्रकाश",b:[2,6,11],s:[2,4,7]},
+						{w:"प्रमाण",b:[2,6,11],s:[2,4,7]},
+						{w:"प्रणाम",b:[2,6,11],s:[2,4,7]},
+						{w:"प्रभाव",b:[2,6,11],s:[2,4,7]},
+						{w:"प्रयोग",b:[2,6,11],s:[2,4,7]},
+						{w:"प्रमोद",b:[2,6,11],s:[2,4,7]},
+						{w:"प्रवीण",b:[2,6,11],s:[2,4,7]},
+						{w:" ",b:[1],s:[1]},
+					]
+				},{
+					h:"(iii). &nbsp; पदेन ( ्र )",
+					wl:[
+						{w:" ",b:[],s:[]},
+						{w:"ट्रक",b:[2,6],s:[2,4]},
+						{w:"ड्रम",b:[2,6],s:[2,4]},
+						{w:"ट्रेन",b:[2,7],s:[2,5]},
+						{w:"ड्राइवर",b:[2,7,11,15],s:[2,5,7,9]},
+						{w:"मेट्रो",b:[2,7],s:[2,5]},
+						{w:"ड्रामा",b:[2,7],s:[2,5]},
+						{w:"उष्ट्र",b:[1,6,11],s:[1,4,7]},
+						{w:"राष्ट्र",b:[2,7,12],s:[2,5,8]},
+						{w:"दंष्ट्र",b:[2,7,12],s:[2,5,8]},
+						{w:" ",b:[],s:[]},
+					]
+				}
 			]
 
-			let i = 0, word = "", wordSplit = "", spaced = "";
+			let i = 0, wlF = 0; word = "", wordSplit = "", spaced = "", wordList = wordListMaster[wlF].wl, heading = wordListMaster[wlF].h;
 			function formWords() {
 				wordSplit = wordList[i].w;
 				word = wordSplit;
@@ -176,8 +227,8 @@
 				$("#splitCont").html(wordSplit);
 				$("#aniCont").html(spaced);
 				$("#splitter").val("");
-				$("#splitter").val(spaced);$("#splitter").focus();
 				$("#aniCont").removeClass("smaller");
+				$("#head").html(heading);
 			}
 			let loopF = 0;
 			$('#aniCont').on('animationiteration', function (e) {
@@ -201,9 +252,6 @@
 					i = i + 1;
 					formWords();
 				}
-				if (i == (wordList.length - 1) ) {
-					$("#wrdCont").html("<a href='0605-02.html'>iii. &nbsp;  पदेन ( ⸝ )</a>");
-				}
 			});
 			$("#prvBtn").click(function() {
 				console.log(i);
@@ -211,6 +259,20 @@
 					i = i - 1;
 					formWords();
 				}
+			});
+			$("#FprvBtn").click(function() {
+				wlF = wlF - 1;
+				i = 0;
+				wordList = wordListMaster[wlF].wl,
+				heading = wordListMaster[wlF].h;
+				formWords();
+			});
+			$("#FnxtBtn").click(function() {
+				wlF = wlF + 1;
+				i = 0;
+				wordList = wordListMaster[wlF].wl,
+				heading = wordListMaster[wlF].h;
+				formWords();
 			});
 			$("#wrdCont").click(function() {
 				$("#aniCont").toggleClass("smaller");
