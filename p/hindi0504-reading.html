@@ -179,7 +179,7 @@
 			]
 
 			for (const word of wordList) {
-				$("#lessonCont").html($("#lessonCont").html().replaceAll(word.w,' <span class="meaning" uk-tooltip="' + word.e + '">' + word.w + '</span> '));
+				$("#lessonCont").html($("#lessonCont").html().replace(word.w,' <span class="uk-label" uk-tooltip="' + word.e + '">' + word.w + '</span> '));
 			}
 
 			$("#head").click(function () {
