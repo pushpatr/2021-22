@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/css/uikit.min.css" />
+	<title>Hindi06-05</title>
+
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+		html, body{
+			margin: 0;
+			padding: 0;
+			background: wheat;
+			font-size: 14pt;
+			font-family: 'Eczar', serif;
+		}
+		body{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 80vh;
+			word-spacing: 0.4em;
+		}
+		#mainCont{
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			width: 100%;
+			padding: 0.5em;
+			padding-top: 8vh;
+			text-align: justify;
+		}
+		#head, #foot{
+			position: fixed;
+			left: 0; right: 0;
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			height: 8vh;
+			background: #0009;
+			color: wheat;
+			align-items: center;
+			justify-content: center;
+			font-weight: bold;
+		}
+		#head{
+			top:0;
+			font-weight: bold;
+		}
+		.meaning {
+			font-weight: 600;
+			display: inline-block;
+			background: #0f03;
+			color: seagreen;
+			padding: 0em 0.4em;
+			margin: 0 -0.2em;
+			border-radius: 0.25em;
+		}
+		div.uk-tooltip.uk-active{
+			background: #444;
+			padding: 1em;
+			position: relative;
+			border-radius: 0.5em;
+			border: 2px solid black;
+		}
+		div.uk-tooltip.uk-active::before{
+			display: block;
+			content: "";
+			bottom: -8px;
+			left: calc(50% - 10px);
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 8px 10px 0 10px;
+			border-color: #000000 transparent transparent transparent;
+		}
+		#lessonEnd{
+			width: 100%;
+			text-align: center;
+			height: 40vh;
+			padding: 10vh 0;
+		}
+		@supports (backdrop-filter: blur()) {
+			#head {
+				background: #0009;
+				backdrop-filter: blur(5px);
+			}
+			div.uk-tooltip.uk-active{
+				background: #0009;
+				backdrop-filter: blur(5px);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="head">एक पत्र सखी के नाम</div>
+	<div id="mainCont">
+		<br><br><br><br><br>
+		सी-28, मल्कागंज, दिल्ली<br>
+		20 जून, 2021 <br>
+		<br>
+		प्रिय श्यामला,
+		<div id="lessonCont">
+			<p>
+				कल मौसी की शादी हो गई। हमने खूब मिठाई खाई। बहुत मज़े किए। नाना जी हमें जयपुर घुमाने ले गए। जयपुर में अधिकतर भवन लाल पत्थरों से बने थे। इसलिए इसे गुलाबी नगरी भी कहते हैं।
+			</p>
+			<p>
+				हम सबसे पहले सिटी पैलेस गए। सिटी पैलेस जयपुर का लैंडमार्क है। इस के प्रवेश द्वार पर संगमरमर के दो नक्काशीदार हाथी खड़े हैं। इसमें कई भवन, आंगन, बाग तथा मंदिर है। पुराने जमाने के कीमती सामान को यहाँ सँभालकर रखा गया है।
+			</p>
+			<p>
+				सिटी पहले से कुछ दूर पत्थर की वेधशाला है, जिसे जंतर-मंतर कहते हैं इसमें समय को मापने ग्रहण का पता लगाने तथा तारों को देखने के उपकरण शामिल है। फिर नाना जी हमें हवा महल घुमाने ले गए। यह पाँच मंजिला इमारत है। इसमें 1000 छोटी खिड़कियाँ है। इसे इस प्रकार बनाया गया है कि अंदर से बाहर का दृश्य देखा जा सकता है लेकिन बाहर से अंदर का दृश्य दिखाई नहीं देता। इसका डिजाइन जालीदार है इसीलिए गरमियों में भी ठंडी हवा इस महल में आती है।
+			</p>
+			<p>
+				नाना जी जब आमेर के किले लेकर गए तो सच में मजा आ गया। आमेर का किला लाल संगमरमर तथा बलवा पत्थरों से बना है। यह पहाड़ की चोटी पर स्थित है। इसमें मुझे शीश महल बहुत अच्छा लगा। हमने नाहरगढ़ किला, रामगढ़ झील तथा रामनिवास बाग देखें।
+			</p>
+			<p>
+				अगर तुम कभी जयपुर जाओ तो इंसानों को देखना मत भूलना। अरे मैं जल महल की बात तो भूल ही गई। जल महल जयपुर शहर की सागर झील के बीच में स्थित है। चांदनी रात में झील के पानी में यह महल बहुत सुंदर लगता है। इसका चमेली बाग तो बहुत ही खूबसूरत है।
+			</p>
+			<p>
+				मैं तुम्हें पत्र के साथ जयपुर के कुछ चित्र भेज रही हूँ। देख कर बताना तुम्हें कौन सा चित्र सबसे अच्छा लगा।
+			</p>
+			<p>
+				चाचा जी तथा चाची जी को मेरा प्रणाम कहना और गुड्­डू को बहुत-बहुत प्यार।
+			</p><br>
+			तुम्हारी सहेली,<br>
+			आस्था
+			<div id="lessonEnd"> * * * * * </div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit-icons.min.js"></script>
+	<script>
+		$(function() {
+
+			let wordList = [
+				{w:" मौसी ",e:"माँ कि बहन, Mother's Sister"},
+				{w:"कल ",e:"Yesterday"},
+				{w:" शादी ",e:"विवाह, marriage"},
+				{w:" खूब ",e:"बहुत, lots of"},
+				{w:" मिठाई ",e:"sweets"},
+				{w:" अधिकतर ",e:"ज्यादातर, most"},
+				{w:" भवन ",e:"इमारत, buildings"},
+				{w:" पत्थरों ",e:"stones"},
+				{w:" गुलाबी ",e:"pink"},
+				{w:" नागरी ",e:"city"},
+				{w:" सिटी पैलेस ",e:"City-Palace, a place in Jaipur"},
+				{w:" लैंडमार्क ",e:"landmark (a famous place of a locality)"},
+				{w:" संगमरमर ",e:"white marble"},
+				{w:" बालुवा ",e:"बालुवा पत्थर: Sandstone"},
+				{w:" लाल संगमरमर ",e:"Red marble"},
+				{w:" खिड़कियाँ ",e:"windows"},
+				{w:" पाँच ",e:"five"},
+				{w:" मंजिला ",e:"storeyed"},
+				{w:" इमारत ",e:"building"},
+				{w:"  ",e:""},
+				{w:"  ",e:""},
+				{w:"  ",e:""},
+				{w:"  ",e:""},
+				{w:"  ",e:""},
+				{w:"  ",e:""},
+				{w:"  ",e:""},
+			]
+
+			for (const word of wordList) {
+				$("#lessonCont").html($("#lessonCont").html().replaceAll(word.w," <span class='meaning' uk-tooltip='" + word.e + "'>" + word.w + "</span> "));
+			}
+
+			$("#head").click(function () {
+				toggleFullScreen();
+			});
+			$("#lessonCont > p").prepend("&nbsp;&nbsp;&nbsp;")
+			function toggleFullScreen(){document.fullscreenElement||document.mozFullScreenElement||document.webkitFullscreenElement||document.msFullscreenElement?document.exitFullscreen?document.exitFullscreen():document.msExitFullscreen?document.msExitFullscreen():document.mozCancelFullScreen?document.mozCancelFullScreen():document.webkitExitFullscreen&&document.webkitExitFullscreen():document.documentElement.requestFullscreen?document.documentElement.requestFullscreen():document.documentElement.msRequestFullscreen?document.documentElement.msRequestFullscreen():document.documentElement.mozRequestFullScreen?document.documentElement.mozRequestFullScreen():document.documentElement.webkitRequestFullscreen&&document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT)}
+		});
+	</script>
+</body>
+</html>
