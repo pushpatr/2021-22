@@ -61,7 +61,7 @@
 		.meaning {
 			font-weight: 600;
 			display: inline-block;
-			background: #0f03;
+			background: linear-gradient(0deg,transparent 0%, transparent 25%,#0f09 100%);
 			color: seagreen;
 			padding: 0em 0.4em;
 			margin: 0 -0.2em;
@@ -179,7 +179,7 @@
 			]
 
 			for (const word of wordList) {
-				$("#lessonCont").html($("#lessonCont").html().replace(word.w,' <mark uk-tooltip="' + word.e + '">' + word.w + '</mark> '));
+				$("#lessonCont").html($("#lessonCont").html().replace(word.w,' <div class="meaning" uk-tooltip="' + word.e + '">' + word.w + '</div> '));
 			}
 
 			$("#head").click(function () {
