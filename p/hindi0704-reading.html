@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="author" content="#pushpaTr Hindi Teacher" />
+	<meta name="description" content="Reading 5th Std Hindi Lesson, with meanings of difficult words." />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/css/uikit.min.css" />
+	<title>Hindi05-TB04-Reading</title>
+
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+		html, body{
+			margin: 0;
+			padding: 0;
+			background: wheat;
+			font-size: 16pt;
+			font-family: 'Eczar', serif;
+		}
+		body{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 80vh;
+			word-spacing: 0.4em;
+		}
+		#mainCont{
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			width: 100%;
+			padding: 0.5em;
+			padding-top: 8vh;
+			text-align: justify;
+		}
+		#head, #foot{
+			position: fixed;
+			left: 0; right: 0;
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			height: 8vh;
+			background: #0009;
+			color: wheat;
+			align-items: center;
+			justify-content: center;
+			font-weight: bold;
+		}
+		#head{
+			top:0;
+			font-weight: bold;
+		}
+		.meaning {
+			font-weight: 600;
+		}
+		div.uk-tooltip.uk-active{
+			background: #444;
+			padding: 0.25em 0.5em;
+			position: relative;
+			border-radius: 0.25em;
+			border: 2px solid black;
+			font-size: 0.8em;
+		}
+		div.uk-tooltip.uk-active b{
+			color: aqua;
+		}
+		div.uk-tooltip.uk-active::before{
+			display: block;
+			content: "";
+			bottom: -8px;
+			left: calc(50% - 10px);
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 8px 10px 0 10px;
+			border-color: #000000 transparent transparent transparent;
+		}
+		#lessonEnd{
+			width: 100%;
+			text-align: center;
+			height: 40vh;
+			padding: 10vh 0;
+		}
+		@supports (backdrop-filter: blur()) {
+			#head {
+				background: #0009;
+				backdrop-filter: blur(5px);
+			}
+			div.uk-tooltip.uk-active{
+				background: #0009;
+				backdrop-filter: blur(5px);
+			}
+		}
+		.grn{color: seagreen;}
+		.blu{color: cornflowerblue;}
+		.pnk{color: hotpink;}
+		.prp{color: mediumpurple;}
+		.red{color: firebrick;}
+		.mean{
+			color: aqua;
+		}
+	</style>
+</head>
+<body>
+	<div id="head">मैं भी नाम कमाता</div>
+	<div id="mainCont">
+		<br><br><br><br><br>
+		<div id="lessonCont">
+			<p>
+				 रोज़-रोज़ सीमा की ख़बरें,<br />
+				 सुन­-सुनकर मन नन्हा मेरा,<br />
+				 मुस-मुसकर रह जाता ।<br />
+			</p>
+			<p>
+				 अगर न होता छोटा बच्चा,<br />
+				 तो लेकर बन्दूक हाथ में,<br />
+				 मैं भी नाम कमाता ।<br />
+			</p>
+			<p>
+				 झटपट होकर बड़ा फौज़ में,<br />
+				 एक यही बस मन में आता,<br />
+				 मैं भर्ती हो जाता ।<br />
+			</p>
+			<p>
+				 माँ कितनी खुश होती जब मैं<br />
+				 एक बड़ा सा पुरस्कार भी<br />
+				 राष्ट्रपति से पाता ।<br />
+			</p>
+			<div id="lessonEnd"> * * * * * </div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit-icons.min.js"></script>
+	<script>
+		$(function() {
+
+			let wordList = [
+				{w:" रोज़-रोज़ ",e:"<b>रोज़-रोज़</b><br/>प्रतिदिन, हर रोज़, everyday, (daily-daily)"},
+				{w:" सीमा ",e:"<b>सीमा</b><br/>border"},
+				{w:" ख़बरें",e:"<b>ख़बरें</b><br/>समाचार, news"},
+				{w:" सुन­",e:"<b>सुन</b><br/>hear, listen"},
+				{w:" मन ",e:"<b>मन</b><br/>mind, heart"},
+				{w:"नन्हा ",e:"<b>नन्हा</b><br/>छोटा, small"},
+				{w:" मुस-मुसकर ",e:"<b>मुस-मुसकर</b><br/>मन मसोस कर,<br/>To feel sorry, sad"},
+				{w:"रह जाता ",e:"<b>रह जाता</b><br/>stays"},
+				{w:"नाम कमाता",e:"<b>नाम कमाना</b><br/>To gain respect & fame,<br/>To earn name"},
+			]
+			let colorList = [
+				"grn", "blu", "pnk", "prp", "red"
+			]
+
+			let wordW = "", wordE = "";
+			let i = 0;
+			for (const word of wordList) {
+				let colorF = i % 5;
+				wordW = word.w;
+				wordE = word.e;
+				$("#lessonCont").html($("#lessonCont").html().replace(word.w,'<span class="meaning ' + colorList[colorF] + '" uk-tooltip="' + word.e + '">' + word.w + '</span>'));
+				i+=1;
+			}
+
+			$("#head").click(function () {
+				toggleFullScreen();
+			});
+			function toggleFullScreen(){document.fullscreenElement||document.mozFullScreenElement||document.webkitFullscreenElement||document.msFullscreenElement?document.exitFullscreen?document.exitFullscreen():document.msExitFullscreen?document.msExitFullscreen():document.mozCancelFullScreen?document.mozCancelFullScreen():document.webkitExitFullscreen&&document.webkitExitFullscreen():document.documentElement.requestFullscreen?document.documentElement.requestFullscreen():document.documentElement.msRequestFullscreen?document.documentElement.msRequestFullscreen():document.documentElement.mozRequestFullScreen?document.documentElement.mozRequestFullScreen():document.documentElement.webkitRequestFullscreen&&document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT)}
+		});
+	</script>
+</body>
+</html>
