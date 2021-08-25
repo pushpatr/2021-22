@@ -147,15 +147,36 @@
 		$(function() {
 
 			let wordList = [
-				{w:" रोज़-रोज़ ",e:"<b>रोज़-रोज़</b><br/>प्रतिदिन, हर रोज़, everyday, (daily-daily)"},
-				{w:" सीमा ",e:"<b>सीमा</b><br/>border"},
-				{w:" ख़बरें",e:"<b>ख़बरें</b><br/>समाचार, news"},
-				{w:" सुन­",e:"<b>सुन</b><br/>hear, listen"},
-				{w:" मन ",e:"<b>मन</b><br/>mind, heart"},
-				{w:"नन्हा ",e:"<b>नन्हा</b><br/>छोटा, small"},
-				{w:" मुस-मुसकर ",e:"<b>मुस-मुसकर</b><br/>मन मसोस कर,<br/>To feel sorry, sad"},
-				{w:"रह जाता ",e:"<b>रह जाता</b><br/>stays"},
-				{w:"नाम कमाता",e:"<b>नाम कमाना</b><br/>To gain respect & fame,<br/>To earn name"},
+				{w:" रोज़-रोज़ ",h:"रोज़-रोज़",e:"प्रतिदिन, हर रोज़, everyday, (daily-daily)"},
+				{w:" सीमा ",h:"सीमा",e:"border"},
+				{w:" ख़बरें",h:"ख़बरें",e:"समाचार, news"},
+				{w:" सुन­",h:"सुन­",e:"hear, listen"},
+				{w:" मन ",h:"मन",e:"mind, heart"},
+				{w:"नन्हा ",h:"नन्हा",e:"छोटा, small"},
+				{w:" मुस-मुसकर ",h:"मुस-मुसकर",e:"मन मसोस कर,<br/>To feel sorry, sad"},
+				{w:"रह जाता ",h:"रह जाता",e:"stays"},
+				{w:" नाम कमाता ",h:"नाम कमाना",e:"To gain respect & fame,<br/>To earn name"},
+				{w:" झटपट ",h:"झटपट",e:"जल्दी से, फ़ौरन, तुरंत, instantly"},
+				{w:" फौज़ ",h:"फौज़",e:"सेना, army"},
+				{w:" में",h:"में",e:"in"},
+				{w:" मैं ",h:"मैं",e:"I, me"},
+				{w:" भर्ती ",h:"भर्ती",e:"to get Recruited, to get addmission"},
+				{w:" माँ ",h:"माँ",e:"माता, mother"},
+				{w:"कितनी ",h:"कितनी",e:"how much"},
+				{w:"खुश ",h:"खुश",e:"आनंदित, प्रसन्न, हर्षित, happy"},
+				{w:" पुरस्कार ",h:"पुरस्कार",e:"इनाम, prize, award"},
+				{w:" राष्ट्रपति ",h:"राष्ट्रपति",e:"President -<br/>Ram Nath Kovind ji<br/>श्री राम नाथ कोविन्द जी"},
+				{w:" अगर ",h:"अगर",e:"यदि, if"},
+				{w:" बन्दूक ",h:"बन्दूक",e:"rifle, gun, revolver"},
+				{w:" यही ",h:"यही",e:"only this"},
+				{w:" आता",h:"आता",e:"come"},
+				{w:" हो जाता ",h:"हो जाता",e:"to become, to happen"},
+				{w:" पाता ",h:"पाना",e:"to get"},
+				{w:"",h:"",e:""},
+				{w:"",h:"",e:""},
+				{w:"",h:"",e:""},
+				{w:"",h:"",e:""},
+				{w:"",h:"",e:""},
 			]
 			let colorList = [
 				"grn", "blu", "pnk", "prp", "red"
@@ -167,7 +188,7 @@
 				let colorF = i % 5;
 				wordW = word.w;
 				wordE = word.e;
-				$("#lessonCont").html($("#lessonCont").html().replace(word.w,'<span class="meaning ' + colorList[colorF] + '" uk-tooltip="' + word.e + '">' + word.w + '</span>'));
+				$("#lessonCont").html($("#lessonCont").html().replace(word.w,'<span class="meaning ' + colorList[colorF] + '" uk-tooltip="<b>' + word.h + '</b><br/>' + word.e + '">' + word.w + '</span>'));
 				i+=1;
 			}
 
