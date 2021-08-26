@@ -48,6 +48,7 @@
 			flex-direction: row;
 			width: 100%;
 			height: 8vh;
+			min-height: 54px;
 			background: #0009;
 			color: wheat;
 			align-items: center;
@@ -57,6 +58,7 @@
 		#head{
 			top:0;
 			font-weight: bold;
+			font-size: 1.2em;
 		}
 		.meaning {
 			font-weight: 600;
@@ -121,9 +123,9 @@
 <body>
 	<div id="head">एक पत्र सखी के नाम</div>
 	<div id="mainCont">
-		<br><br><br><br><br>
-		This lesson is a letter sent by Aastha to her friend Shyamla.<br><br>
-		<div id="lessonCont">
+		<br><br>
+		This lesson is a letter sent by Aastha to her friend Shyamla.<br>
+		<div id="lessonCont" style="border-top: 2px solid #0005;">
 			&nbsp; <br>
 			सी-२८, मल्कागंज, दिल्ली<br>
 			२० जून, २०२१ <br>
@@ -152,7 +154,7 @@
 		$(function() {
 
 			let wordList = [
-				{w:"सी-२८,",e:"सी-अट्­ठाईस<br>सी-अट्ठाईस,"},
+				{w:"सी-२८,",e:"सी-अट्­ठाईस / <br>सी-अट्ठाईस"},
 				{w:"२० जून, २०२१",e:"बीस जून, दो हजार इक्कीस"},
 				{w:"प्रिय श्यामला,",e:"Dear Shyamla,"},
 				{w:"कल ",e:"Yesterday"},
@@ -230,7 +232,7 @@
 				{w:" चाचीजी ",e:"wife of father\'s brother, aunt"},
 				{w:" मेरा प्रणाम ",e:"my greetings"},
 				{w:" गुड्­डू ",e:"Guddu, a boy\'s name"},
-				{w:"तुम्हारी सहेली",e:"your friend,"},
+				{w:"तुम्हारी सहेली,",e:"Your friend,"},
 				{w:" खूबसूरत ",e:"Beautiful"},
 				{w:" चित्र ",e:"picture, photo, image"},
 				{w:" कौन-सा ",e:"which"},
