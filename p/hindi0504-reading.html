@@ -4,8 +4,9 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="author" content="#pushpaTr Hindi Teacher" />
-	<meta name="description" content="Reading 5th Std Hindi Lesson, with meanings of difficult words." />
+	<meta name="author" content="#pushpaTr - Hindi Teacher" />
+	<meta property="og:image" itemprop="image" content="https://pushpatr.github.io/2021-22/a/patra.jpg" />
+	<meta name="description" content="HIN0704 'मैं भी नाम कमाता' Reading with meanings of difficult words." />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -108,6 +109,7 @@
 		.pnk{color: hotpink;}
 		.prp{color: mediumpurple;}
 		.red{color: firebrick;}
+		.org{color: orangered;}
 		.mean{
 			color: aqua;
 		}
@@ -148,77 +150,137 @@
 		$(function() {
 
 			let wordList = [
-				{w:" मौसी ",e:"माँ की बहन, Mother\'s Sister"},
 				{w:"कल ",e:"Yesterday"},
+				{w:" मौसी ",e:"माँ की बहन, Mother\'s Sister"},
 				{w:" शादी ",e:"विवाह, marriage"},
 				{w:" खूब ",e:"बहुत, lots of"},
 				{w:" मिठाई ",e:"sweet"},
+				{w:" नाना ",e:"Mother\'s father (Grandpa)"},
+				{w:" जयपुर ",e:"Jaipur is the capital city of Rajasthan"},
+				{w:" घुमाने ले गए",e:"to take on a trip"},
 				{w:" अधिकतर ",e:"ज्यादातर, most"},
+				{w:" लाल ",e:"red"},
 				{w:" भवन ",e:"इमारत, buildings"},
 				{w:" पत्थरों ",e:"stones"},
+				{w:" बने ",e:"built"},
 				{w:" गुलाबी ",e:"pink"},
+				{w:" इसलिए ",e:"so, that is why"},
 				{w:" नगरी ",e:"city"},
+				{w:" सबसे पहले ",e:"first of all"},
 				{w:" सिटी पैलेस ",e:"City-Palace, a place in Jaipur"},
 				{w:" लैंडमार्क ",e:"landmark (famous place of a locality)"},
-				{w:" संगमरमर ",e:"white marble"},
-				{w:" बलुवा ",e:"बालुवा पत्थर: Sandstone"},
-				{w:" लाल संगमरमर ",e:"Red marble"},
-				{w:" खिड़कियाँ ",e:"windows"},
-				{w:" पाँच ",e:"five"},
-				{w:" मंजिला ",e:"storeyed"},
-				{w:" इमारत ",e:"building"},
-				{w:" जयपुर ",e:"Jaipur is the capital city of Rajasthan"},
-				{w:" नाना ",e:"Mother\'s father (Grandpa)"},
-				{w:" घुमाने ले गए",e:"to take on a trip"},
-				{w:" इसलिए ",e:"so, that is why"},
-				{w:" सबसे पहले ",e:"first of all"},
 				{w:" प्रवेश ",e:"enterance"},
 				{w:" द्वार ",e:"gate, door"},
+				{w:" संगमरमर ",e:"white marble"},
 				{w:" नक्काशीदार ",e:"carved, chiseled, sculpted"},
 				{w:" हाथी ",e:"elephant"},
+				{w:" खड़े ",e:"standing"},
 				{w:" आंगन",e:"courtyard, an open space without a roof, surrounded by buildings"},
 				{w:" बाग ",e:"garden, park"},
-				{w:" मंदिर ",e:"temple"},
 				{w:" तथा ",e:"and"},
+				{w:" मंदिर ",e:"temple"},
 				{w:" पुराने जमाने ",e:"of old period, of ancient times"},
 				{w:" कीमती ",e:"valuable, costly"},
 				{w:" सँभालकर ",e:"with care"},
 				{w:" रखा ",e:"kept"},
-				{w:" वेदशाला ",e:"observatory, planetarium"},
+				{w:" कुछ दूर ",e:"near,<br>at a little distance, not very far"},
+				{w:" वेधशाला ",e:"observatory, planetarium"},
 				{w:" जंतर-मंतर ",e:"Jantar-Mantar, a place in Jaipur & Delhi"},
 				{w:" समय ",e:"time"},
 				{w:" मापने ",e:"measuring"},
 				{w:" ग्रहण ",e:"eclipse"},
 				{w:" तारों ",e:"stars"},
 				{w:" उपकरण ",e:"tool, device"},
+				{w:" शामिल ",e:"included"},
 				{w:" हवा ",e:"wind, air"},
 				{w:" महल ",e:"palace"},
-				{w:" शामिल ",e:"included"},
+				{w:" पाँच ",e:"five"},
+				{w:" मंजिला ",e:"storeyed"},
+				{w:" इमारत ",e:"building"},
 				{w:" छोटी ",e:"small"},
 				{w:" खिड़कियाँ ",e:"windows"},
-				{w:"  ",e:""},
-				{w:"  ",e:""},
-				{w:"  ",e:""},
-				{w:"  ",e:""},
-				{w:"  ",e:""},
-				{w:"  ",e:""},
-				{w:"  ",e:""},
-				{w:"  ",e:""},
-				{w:"  ",e:""},
-				{w:"  ",e:""},
-				{w:"  ",e:""},
-				{w:"  ",e:""},
+				{w:" बलुवा ",e:"बालुवा पत्थर - Sandstone"},
+				{w:" लाल संगमरमर ",e:"Red marble"},
+				{w:" खिड़कियाँ ",e:"windows"},
+				{w:" इस प्रकार ",e:"like this"},
+				{w:" बनाया ",e:"built"},
+				{w:" अंदर ",e:"inside"},
+				{w:" बाहर ",e:"outside"},
+				{w:" दृश्य ",e:"नज़ारा, view, scene"},
+				{w:" लेकिन ",e:"but"},
+				{w:" डिजाइन ",e:"design, pattern"},
+				{w:" जालीदार ",e:"contains net-like pattern, mesh"},
+				{w:" गरमियों ",e:"during summer season"},
+				{w:" ठंडी ",e:"cold"},
+				{w:" आती ",e:"comes, enters"},
+				{w:" आमेर के किले ",e:"आमेर का किले -<br>Amer Fort, a place in Jaipur"},
+				{w:" पहाड़ की चोटी ",e:"mountain peak, top part of a mountain"},
+				{w:" स्थित ",e:"located, situated"},
+				{w:" शीश महल ",e:"mirror-palace, glass-palace, it is a place in Jaipur"},
+				{w:" नाहरगढ़ किला",e:"Nahargarh Fort, a place in Jaipur"},
+				{w:" रामगढ़ झील ",e:"Ramgarh Lake, a place in Jaipur"},
+				{w:" रामनिवास बाग ",e:"RamNivas Garden, a place in Jaipur"},
+				{w:"अगर ",e:"if"},
+				{w:" मत भूलना",e:"don\'t forget"},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
+				{w:" ",e:""},
 			]
 
 			
 			let colorList = [
-				"grn", "blu", "prp", "pnk", "red"
+				"grn", "org", "blu", "pnk", "prp", "red"
 			]
 			let wordW = "", wordE = "";
 			let i = 0;
 
 			for (const word of wordList) {
-				let colorF = i % 5;
+				let colorF = i % 6;
 				wordW = word.w;
 				wordE = word.e;
 				$("#lessonCont").html($("#lessonCont").html().replace(word.w,' <span class="meaning ' + colorList[colorF] + '" uk-tooltip="<b>' + word.w + '</b><br/>' + word.e + '">' + word.w + '</span> '));				i = i + 1;
