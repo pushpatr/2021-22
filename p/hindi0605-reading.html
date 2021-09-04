@@ -68,7 +68,7 @@
 			background: #00000018;
 			color: seagreen;
 			border-radius: 0.25em;
-			font-size: 16pt;
+			font-size: 18pt;
 		}
 		div.uk-tooltip.uk-active{
 			background: #444;
@@ -76,7 +76,7 @@
 			position: relative;
 			border-radius: 0.25em;
 			border: 2px solid black;
-			font-size: 0.8em;
+			font-size: 1.2em;
 		}
 		div.uk-tooltip.uk-active::before{
 			display: block;
@@ -169,6 +169,10 @@
 		<br><br><br>
 		<div class="qrkh3">पढ़ो और समझो:</div>
 		<div class="qrkh4">(Read and Understand)</div>
+		<div style="grid-column: span 3;" class="uk-alert-warning" uk-alert>
+			<a class="uk-alert-close" uk-close></a>
+			<p>Click on the words below to view their meaning.</p>
+		</div>
 		<div id="refCont">
 			<div class="lsnHeading">(i). &nbsp; रेफ ( ౕ )</div>
 		</div>
@@ -179,6 +183,16 @@
 		<br><br>
 		<div id="padenCont">
 			<div class="lsnHeading">(iii). &nbsp; पदेन ( ៱ )</div>
+		</div>
+	</div>
+
+	<div id="modal-example" uk-modal>
+		<div class="uk-modal-dialog uk-modal-body uk-background-muted">
+			<h2 class="uk-modal-title">Please Note</h2>
+			<p>Click on the Words or Sentences to view their meaning in English.</p>
+			<p class="uk-text-right">
+				<button class="uk-button uk-button-primary uk-modal-close" type="button">OK</button>
+			</p>
 		</div>
 	</div>
 
@@ -215,6 +229,7 @@
 			]
 
 			let refLines = [
+				{w:"Click on sentences to view their meaning.",m:"Meaning will be shown below the sentence."},
 				{w:"व्यर्थ में खर्च मत करो।",m:"Do not spend wastefully."},
 				{w:"मार्ग पर कचरा मत फेंको।",m:"Do not throw garbage on the road."},
 				{w:"सर्प पेड़ पर चढ़ गया।",m:"The snake climbed the tree."},
@@ -245,6 +260,7 @@
 			]
 
 			let padLines = [
+				{w:"Click on sentences to view their meaning.",m:"Meaning will be shown below the sentence."},
 				{w:"बड़ों को प्रणाम करो।",m:"Praise the elders."},
 				{w:"मित्रों के साथ प्रेम से बात करो।",m:"Talk to friends with affection."},
 				{w:"कक्षा में क्रम से बैठो।",m:"Sit in order in class."},
@@ -264,6 +280,7 @@
 			]
 
 			let padenLines = [
+				{w:"Click on sentences to view their meaning.",m:"Meaning will be shown below the sentence."},
 				{w:"मैं ट्रेन से मैसूर जाता हूँ।",m:"I go to Mysore by train."},
 				{w:"राघव ड्रम बजाता है।",m:"Raghav plays drums."},
 				{w:"ट्रक में सामान भर हुआ है।",m:"The truck is full of goods."},
@@ -317,6 +334,15 @@
 				$("#padenCont").append('<div class="tglCont"><div class="tgl" uk-toggle="target: .paden' + l + '"> ' + s.w + ' </div><div class="tgl-ans paden' + l + '" hidden>' + s.m + '</div></div>');
 				l = l + 1;
 			}
+
+			$(".ref0").removeAttr("hidden");
+			$(".pad0").removeAttr("hidden");
+			$(".paden0").removeAttr("hidden");
+
+			setTimeout(function () {
+				let elm = $("#modal-example")
+				UIkit.modal(elm).show();
+			}, 3000);
 
 			$("#mainCont").append(lsnEnd)
 			$("#head").click(function () {
