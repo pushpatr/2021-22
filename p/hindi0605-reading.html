@@ -295,11 +295,23 @@
 				$("#padenCont").append('<div class="meaning ' + colorList[colorF] + '" uk-tooltip="<b>' + word.w + '</b><br/>' + word.m + '">' + word.w + '</div> ');
 				i = i + 1;
 			}
+
 			let j = 0;
 			for (const s of refLines) {
-
 				$("#refCont").append('<div class="tglCont"><div class="tgl" uk-toggle="target: .ref' + j + '"> ' + s.w + ' </div><div class="tgl-ans ref' + j + '" hidden>' + s.m + '</div></div>');
 				j = j + 1;
+			}
+			
+			let k = 0;
+			for (const s of padLines) {
+				$("#padCont").append('<div class="tglCont"><div class="tgl" uk-toggle="target: .ref' + k + '"> ' + s.w + ' </div><div class="tgl-ans ref' + k + '" hidden>' + s.m + '</div></div>');
+				k = k + 1;
+			}
+
+			let l = 0;
+			for (const s of padenLines) {
+				$("#padenCont").append('<div class="tglCont"><div class="tgl" uk-toggle="target: .ref' + l + '"> ' + s.w + ' </div><div class="tgl-ans ref' + l + '" hidden>' + s.m + '</div></div>');
+				l = l + 1;
 			}
 
 			$("#head").click(function () {
