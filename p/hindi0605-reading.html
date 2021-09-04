@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="author" content="#pushpaTr - Hindi Teacher" />
-	<meta property="og:image" itemprop="image" content="https://pushpatr.github.io/2021-22/a/patra.jpg" />
+	<meta property="og:image" itemprop="image" content="https://pushpatr.github.io/2021-22/a/r-maatra.jpg" />
 	<meta name="description" content="Reading 'एक पत्र सखी के नाम' with meanings of difficult words." />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -285,8 +285,11 @@
 				$("#padenCont").append('<div class="meaning ' + colorList[colorF] + '" uk-tooltip="<b>' + word.w + '</b><br/>' + word.m + '">' + word.w + '</div> ');
 				i = i + 1;
 			}
-			for (const s of refList) {
-				$("#refCont").append('<div class="tglCont"><div class="tgl" uk-toggle="target: .ref1"> ' + s.w + ' </div><div class="tgl-ans ref1" hidden>' + s.m + '</div></div>')
+			let j = 0;
+			for (const s of refLines) {
+
+				$("#refCont").append('<div class="tglCont"><div class="tgl" uk-toggle="target: .ref' + j + '"> ' + s.w + ' </div><div class="tgl-ans ref' + j + '" hidden>' + s.m + '</div></div>');
+				j = j + 1;
 			}
 
 			$("#head").click(function () {
