@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="author" content="#pushpaTr - Hindi Teacher" />
+	<meta property="og:image" itemprop="image" content="https://pushpatr.github.io/2021-22/a/patra.jpg" />
+	<meta name="description" content="Reading 'एक पत्र सखी के नाम' with meanings of difficult words." />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/css/uikit.min.css" />
+	<title>Hindi05-TB04-Reading</title>
+
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+		html, body{
+			margin: 0;
+			padding: 0;
+			background: wheat;
+			font-size: 12pt;
+			font-family: 'Eczar', serif;
+		}
+		body{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 80vh;
+			word-spacing: 0.4em;
+		}
+		#mainCont{
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			width: 100%;
+			padding: 1.5em;
+			text-align: justify;
+		}
+		#head, #foot{
+			position: fixed;
+			left: 0; right: 0;
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			height: 8vh;
+			min-height: 54px;
+			background: #0009;
+			color: wheat;
+			align-items: center;
+			justify-content: center;
+			font-weight: bold;
+		}
+		#head{
+			top:0;
+			font-weight: bold;
+			font-size: 1.2em;
+			box-shadow: 0 0 10px #0009;
+			border-bottom: 4px solid #0006;
+		}
+		.meaning {
+			font-weight: 600;
+			display: inline-block;
+			background: #00000018;
+			color: seagreen;
+			border-radius: 0.25em;
+			font-size: 14pt;
+		}
+		div.uk-tooltip.uk-active{
+			background: #444;
+			padding: 0.25em 0.5em;
+			position: relative;
+			border-radius: 0.25em;
+			border: 2px solid black;
+			font-size: 0.8em;
+		}
+		div.uk-tooltip.uk-active::before{
+			display: block;
+			content: "";
+			bottom: -8px;
+			left: calc(50% - 10px);
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 8px 10px 0 10px;
+			border-color: #000000 transparent transparent transparent;
+		}
+		#lessonEnd{
+			width: 100%;
+			text-align: center;
+			height: 40vh;
+			padding: 10vh 0;
+		}
+		@supports (backdrop-filter: blur()) {
+			#head {
+				background: #0009;
+				backdrop-filter: blur(5px);
+			}
+			div.uk-tooltip.uk-active{
+				background: #0009;
+				backdrop-filter: blur(5px);
+			}
+		}
+		.grn{color: seagreen;}
+		.blu{color: cornflowerblue;}
+		.pnk{color: hotpink;}
+		.prp{color: mediumpurple;}
+		.red{color: firebrick;}
+		.org{color: orangered;}
+		.mean{
+			color: aqua;
+		}
+		div.uk-tooltip.uk-active b{
+			color: aqua;
+		}
+		#refCont, #padCont, #padenCont{
+			width: 100%;
+			display: grid;
+			grid-gap: 0.5em;
+			border-top: 2px solid #0005;padding-top: 1em;
+			grid-template-columns: repeat(3, 1fr);
+		}
+		#refCont > div,#padCont > div,#padenCont > div{
+			display: flex;
+			width: 100%;
+			align-items: center;
+			justify-content: center;
+			padding: 0.5em 0 0.25em 0;
+		}
+		.lsnHeading{
+			grid-column: span 3;
+			text-align: center;
+			font-size: 1.5em;
+			font-weight: 600;
+		}
+		.tglCont{
+			grid-column: span 3;
+			display: flex;
+			flex-direction: column;
+		}
+		.tgl{
+			background: lightblue;
+			color: black;
+			flex-grow: 1;
+			width: 100%;
+			padding: 0.25em;
+		}
+		.tgl-ans{
+			background: lightgreen;
+			color: black;
+			flex-grow: 1;
+			width: 100%;
+			padding: 0.25em;
+		}
+	</style>
+</head>
+<body>
+	<div id="head">र की मात्राएँ</div>
+	<div id="mainCont">
+		<br><br><br>
+		<h3>पढ़ो और समझो</h3>
+		<div id="refCont">
+			<div class="lsnHeading">(i). &nbsp; रेफ ( ౕ )</div>
+		</div>
+		<br><br>
+		<div id="padCont">
+			<div class="lsnHeading">(ii). &nbsp; पदेन ( ⸝ )</div>
+		</div>
+		<br><br>
+		<div id="padenCont">
+			<div class="lsnHeading">(iii). &nbsp; पदेन ( ៱ )</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit-icons.min.js"></script>
+	<script>
+		$(function() {
+
+			let lsnEnd = '<div id="lessonEnd"> * * * * * </div>';
+
+			let refList = [
+				{w:"कर्म",m:"Karma"},
+				{w:"सर्प",m:"Snake"},
+				{w:"मर्म",m:"Heart"},
+				{w:"तर्क",m:"Logic"},
+				{w:"खर्च",m:"Expenditure"},
+				{w:"गर्व",m:"Proud"},
+				{w:"पर्ण",m:"Leaf, foliage"},
+				{w:"सर्ग",m:"Book, canto"},
+				{w:"सूर्य",m:"Sun"},
+				{w:"कार्य",m:"Work"},
+				{w:"मार्ग",m:"Way"},
+				{w:"धैर्य",m:"Courage, Endurance"},
+				{w:"व्यर्थ",m:"Waste, in vain"},
+				{w:"दर्शन",m:"Visit, View"},
+				{w:"दर्पण",m:"Mirror"},
+				{w:"अर्जुन",m:"Arjun"},
+				{w:"पर्वत",m:"Mountain"},
+				{w:"वर्तनी",m:"Spelling"},
+				{w:"धार्मिक",m:"Religious"},
+				{w:"आदर्श",m:"Ideal"},
+			]
+
+			let refLines = [
+				{w:"व्यर्थ में खर्च मत करो ।",m:"Do not spend wastefully."},
+				{w:"मार्ग पर कचरा मत फेंको ।",m:"Do not throw garbage on the road."},
+				{w:"सर्प पेड़ पर चढ़ गया ।",m:"The snake climbed the tree."},
+				{w:"आदर्श और दर्शन दोनों भाई हैं ।",m:"Adarsh and Darshan, both are brothers."}
+			]
+
+			let padList = [
+				{w:"क्रम",m:"Sequence, Order"},
+				{w:"भ्रम",m:"Illusion, Confusion"},
+				{w:"प्रेम",m:"Love"},
+				{w:"चक्र",m:"Wheel"},
+				{w:"उम्र",m:"Age"},
+				{w:"सब्र",m:"Patience"},
+				{w:"वज्र",m:"Diamond"},
+				{w:"सम्राट",m:"King"},
+				{w:"प्रकट",m:"Revealed"},
+				{w:"प्रथम",m:"First"},
+				{w:"प्रकार",m:"Type"},
+				{w:"प्रसार",m:"Broadcast, Transmit, Spread"},
+				{w:"प्रसाद",m:"Holy offerings"},
+				{w:"प्रकाश",m:"Light"},
+				{w:"प्रमाण",m:"Proof"},
+				{w:"प्रणाम",m:"Greetings"},
+				{w:"प्रभाव",m:"Effect"},
+				{w:"प्रयोग",m:"Experiment"},
+				{w:"प्रमोद",m:"Pramod"},
+				{w:"प्रवीण",m:"Praveen"},
+			]
+
+			let padLines = [
+				
+			]
+
+			let padenList = [
+				{w:"ट्रक",m:"Truck"},
+				{w:"ड्रम",m:"Drum"},
+				{w:"ट्रेन",m:"Train"},
+				{w:"ड्राइवर",m:"Driver"},
+				{w:"मेट्रो",m:"Metro"},
+				{w:"ड्रामा",m:"Drama"},
+				{w:"उष्ट्र",m:"Camel"},
+				{w:"राष्ट्र",m:"Nation"},
+				{w:"दंष्ट्र",m:"Sting"},
+			]
+
+			let padenLines = []
+
+			
+			let colorList = [
+				"grn", "org", "blu", "pnk", "prp", "red"
+			]
+			let wordW = "", wordE = "";
+			let i = 0;
+
+			for (const word of refList) {
+				let colorF = i % 6;
+				wordW = word.w;
+				wordE = word.m;
+				$("#refCont").append('<div class="meaning ' + colorList[colorF] + '" uk-tooltip="<b>' + word.w + '</b><br/>' + word.m + '">' + word.w + '</div> ');
+				i = i + 1;
+			}
+			for (const word of padList) {
+				let colorF = i % 6;
+				wordW = word.w;
+				wordE = word.m;
+				$("#padCont").append('<div class="meaning ' + colorList[colorF] + '" uk-tooltip="<b>' + word.w + '</b><br/>' + word.m + '">' + word.w + '</div> ');
+				i = i + 1;
+			}
+			for (const word of padenList) {
+				let colorF = i % 6;
+				wordW = word.w;
+				wordE = word.m;
+				$("#padenCont").append('<div class="meaning ' + colorList[colorF] + '" uk-tooltip="<b>' + word.w + '</b><br/>' + word.m + '">' + word.w + '</div> ');
+				i = i + 1;
+			}
+			for (const s of refList) {
+				$("#refCont").append('<div class="tglCont"><div class="tgl" uk-toggle="target: .ref1"> ' + s.w + ' </div><div class="tgl-ans ref1" hidden>' + s.m + '</div></div>')
+			}
+
+			$("#head").click(function () {
+				toggleFullScreen();
+			});
+
+			function toggleFullScreen(){document.fullscreenElement||document.mozFullScreenElement||document.webkitFullscreenElement||document.msFullscreenElement?document.exitFullscreen?document.exitFullscreen():document.msExitFullscreen?document.msExitFullscreen():document.mozCancelFullScreen?document.mozCancelFullScreen():document.webkitExitFullscreen&&document.webkitExitFullscreen():document.documentElement.requestFullscreen?document.documentElement.requestFullscreen():document.documentElement.msRequestFullscreen?document.documentElement.msRequestFullscreen():document.documentElement.mozRequestFullScreen?document.documentElement.mozRequestFullScreen():document.documentElement.webkitRequestFullscreen&&document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT)}
+		});
+	</script>
+</body>
+</html>
