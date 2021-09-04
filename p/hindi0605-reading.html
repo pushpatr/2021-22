@@ -190,18 +190,18 @@
 			let lsnEnd = '<div id="lessonEnd"> * * * * * </div>';
 
 			let refList = [
-				{w:"कर्म",m:"Karma"},
+				{w:"कर्म",m:"Deed / Karma"},
 				{w:"सर्प",m:"Snake"},
 				{w:"मर्म",m:"Heart"},
 				{w:"तर्क",m:"Logic"},
 				{w:"खर्च",m:"Expenditure"},
 				{w:"गर्व",m:"Proud"},
-				{w:"पर्ण",m:"Leaf, foliage"},
-				{w:"सर्ग",m:"Book, canto"},
+				{w:"पर्ण",m:"Leaf"},
+				{w:"सर्ग",m:"Book"},
 				{w:"सूर्य",m:"Sun"},
 				{w:"कार्य",m:"Work"},
 				{w:"मार्ग",m:"Way"},
-				{w:"धैर्य",m:"Courage, Endurance"},
+				{w:"धैर्य",m:"Courage"},
 				{w:"व्यर्थ",m:"Waste, in vain"},
 				{w:"दर्शन",m:"Visit, View"},
 				{w:"दर्पण",m:"Mirror"},
@@ -213,16 +213,16 @@
 			]
 
 			let refLines = [
-				{w:"व्यर्थ में खर्च मत करो ।",m:"Do not spend wastefully."},
-				{w:"मार्ग पर कचरा मत फेंको ।",m:"Do not throw garbage on the road."},
-				{w:"सर्प पेड़ पर चढ़ गया ।",m:"The snake climbed the tree."},
-				{w:"आदर्श और दर्शन दोनों भाई हैं ।",m:"Adarsh and Darshan, both are brothers."}
+				{w:"व्यर्थ में खर्च मत करो।",m:"Do not spend wastefully."},
+				{w:"मार्ग पर कचरा मत फेंको।",m:"Do not throw garbage on the road."},
+				{w:"सर्प पेड़ पर चढ़ गया।",m:"The snake climbed the tree."},
+				{w:"आदर्श और दर्शन दोनों भाई हैं।",m:"Adarsh and Darshan, both are brothers."}
 			]
 
 			let padList = [
 				{w:"क्रम",m:"Sequence, Order"},
 				{w:"भ्रम",m:"Illusion, Confusion"},
-				{w:"प्रेम",m:"Love"},
+				{w:"प्रेम",m:"Affection"},
 				{w:"चक्र",m:"Wheel"},
 				{w:"उम्र",m:"Age"},
 				{w:"सब्र",m:"Patience"},
@@ -232,21 +232,21 @@
 				{w:"प्रथम",m:"First"},
 				{w:"प्रकार",m:"Type"},
 				{w:"प्रसार",m:"Broadcast, Transmit, Spread"},
-				{w:"प्रसाद",m:"Holy offerings"},
+				{w:"प्रसाद",m:"Holy offerings, Prasaad"},
 				{w:"प्रकाश",m:"Light"},
 				{w:"प्रमाण",m:"Proof"},
 				{w:"प्रणाम",m:"Greetings"},
 				{w:"प्रभाव",m:"Effect"},
 				{w:"प्रयोग",m:"Experiment"},
-				{w:"प्रमोद",m:"Pramod"},
-				{w:"प्रवीण",m:"Praveen"},
+				{w:"प्रमोद",m:"Pramod, Boy\'s Name"},
+				{w:"प्रवीण",m:"Praveen, Boy\'s Name"},
 			]
 
 			let padLines = [
-				{w:"बड़ों को प्रणाम करो ।",m:"Praise the elders."},
-				{w:"मित्रों के साथ प्रेम से बात करो ।",m:"Talk to friends with affection."},
-				{w:"कक्षा में क्रम से बैठो ।",m:"Sit in order in class."},
-				{w:"वज्र बहुत महंगा होता है ।",m:"Thunderbolt is very expensive."}
+				{w:"बड़ों को प्रणाम करो।",m:"Praise the elders."},
+				{w:"मित्रों के साथ प्रेम से बात करो।",m:"Talk to friends with affection."},
+				{w:"कक्षा में क्रम से बैठो।",m:"Sit in order in class."},
+				{w:"वज्र बहुत महंगा होता है।",m:"Thunderbolt is very expensive."}
 			]
 
 			let padenList = [
@@ -262,11 +262,11 @@
 			]
 
 			let padenLines = [
-				{w:"मैं ट्रेन से मैसूर जाता हूँ ।",m:"I go to Mysore by train."},
-				{w:"राघव ड्रम बजाता है ।",m:"Raghav plays drums."},
-				{w:"ट्रक में सामान भर हुआ है ।",m:"The truck is full of goods."},
-				{w:"राष्ट्र की सेवा करो ।",m:"Serve the nation"},
-				{w:"सुकन्या ने आज ड्रामा देखा ।",m:"Sukanya saw the drama today."}
+				{w:"मैं ट्रेन से मैसूर जाता हूँ।",m:"I go to Mysore by train."},
+				{w:"राघव ड्रम बजाता है।",m:"Raghav plays drums."},
+				{w:"ट्रक में सामान भर हुआ है।",m:"The truck is full of goods."},
+				{w:"राष्ट्र की सेवा करो।",m:"Serve the nation"},
+				{w:"सुकन्या ने आज ड्रामा देखा।",m:"Sukanya saw the drama today."}
 			]
 
 			
@@ -316,7 +316,7 @@
 				l = l + 1;
 			}
 
-			$("#mainCont").append('<br><br><br><br><br><br><br><br><br>')
+			$("#mainCont").append(lsnEnd)
 			$("#head").click(function () {
 				toggleFullScreen();
 			});
