@@ -304,13 +304,13 @@
 			
 			let k = 0;
 			for (const s of padLines) {
-				$("#padCont").append('<div class="tglCont"><div class="tgl" uk-toggle="target: .ref' + k + '"> ' + s.w + ' </div><div class="tgl-ans ref' + k + '" hidden>' + s.m + '</div></div>');
+				$("#padCont").append('<div class="tglCont"><div class="tgl" uk-toggle="target: .pad' + k + '"> ' + s.w + ' </div><div class="tgl-ans pad' + k + '" hidden>' + s.m + '</div></div>');
 				k = k + 1;
 			}
 
 			let l = 0;
 			for (const s of padenLines) {
-				$("#padenCont").append('<div class="tglCont"><div class="tgl" uk-toggle="target: .ref' + l + '"> ' + s.w + ' </div><div class="tgl-ans ref' + l + '" hidden>' + s.m + '</div></div>');
+				$("#padenCont").append('<div class="tglCont"><div class="tgl" uk-toggle="target: .paden' + l + '"> ' + s.w + ' </div><div class="tgl-ans paden' + l + '" hidden>' + s.m + '</div></div>');
 				l = l + 1;
 			}
 
