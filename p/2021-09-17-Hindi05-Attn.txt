@@ -1,0 +1,63 @@
+'Akash 5th Aishwarya 2thAngadi Dharwad',
+'Amruth Sunagar',
+'Anupama 10 th Gunduraj 5th',
+'Apoorva patil',
+'Arihant Angadi',
+'Ashok Hebballi',
+'BASALING HALLUR',
+'Chinmayi Chinnu',
+'Dr.Rashmi I Turamari' (Sinchana),
+'Gagan muragi',
+'Ganesh Suryavanshi',
+'Geeta G Geeta G' (Vaibhavi L),
+'Harshita Sardesai',
+'Kalmesh Angadi',
+'Keertana Savadi',
+'Khaja Moinuddin Chanpattan',
+'MD adana Amminbhavi',
+'Manjula shindhe Shindhe',
+'Meghana5thclass radhika9thclass Suresh Rathod',
+'Naveen Kadam',
+'Nisar Airani' (Aashura A),
+'Nivedita Viraktamath',
+'PavanKumar 5th IRANNA THEERTHAD',
+'Poornima Viresh' (Tanay Veeresh),
+'Praksh Gali' (Rudramma G),
+'Prateek. Poorvika Hulajogi.',
+'Pratham Dodamani',
+'Ratanna Kurhatti' (Ritesh Kuruhatti),
+'Rishabh M.G',
+'Rohit Agadi',
+'Sahana Pattanshetty',
+'Sakshi Pujar 5th',
+'Samarth .Y .Kanale',
+'Sanjana Muddi',
+'Shivuaprasad Iliger',
+'Shravan Gollar',
+'Shreyash S.S',
+'Shrishail Hiremath',
+'Shrushti Mallaraddi',
+'Shweta Telgar',
+'Srushti more',
+'Supreet Priyanka' (Priyanka Pujar),
+'Tejaswini 5th. Ratan 3rd Desai',
+'Trisha raghavendra',
+'Vaishnavi 5 Barigidad',
+'Vinayak Anad',
+'nivedita s Mareppagoudar',
+'Shraddha Golenovar'
+
+Joined LATE:
+'Ratna udakeri Udakeri' (Apoorva S M)
+
+
+Unknown ID
+'Muskan Nadaf' [Md. Imran Nadaf ???],
+
+
+0000011112,Akash 5th Aishwarya 2thAngadi Dharwad,Amruth Sunagar,Anupama 10 th Gunduraj 5th,Apoorva patil,Arihant Angadi,Ashok Hebballi,BASALING HALLUR,Chinmayi Chinnu,Dr.Rashmi I Turamari,Gagan muragi,Ganesh Suryavanshi,Geeta G Geeta G,Harshita Sardesai,Kalmesh Angadi,Keertana Savadi,Khaja Moinuddin Chanpattan,MD adana Amminbhavi,Manjula shindhe Shindhe,Meghana5thclass radhika9thclass Suresh Rathod,Muskan Nadaf,Naveen Kadam,Nisar Airani,Nivedita Viraktamath,PavanKumar 5th IRANNA THEERTHAD,Poornima Viresh,Praksh Gali,Prateek. Poorvika Hulajogi.,Pratham Dodamani,Pushpa JSS,Ratanna Kurhatti,Ratna udakeri Udakeri,Rishabh M.G,Rohit Agadi,Sahana Pattanshetty,Sakshi Pujar 5th,Samarth .Y .Kanale,Sanjana Muddi,Shivuaprasad Iliger,Shravan,Shreyash S.S,Shrishail Hiremath,Shrushti Mallaraddi,Shweta Telgar,Srushti more,Supreet Priyanka,Tejaswini 5th. Ratan 3rd Desai,Trisha raghavendra,Vaishnavi 5 Barigidad,Vinayak Anad,nivedita s Mareppagoudar
+
+
+
+
+['0000011112', 'Akash 5th Aishwarya 2thAngadi Dharwad', 'Amruth Sunagar', 'Anupama 10 th Gunduraj 5th', 'Apoorva patil', 'Arihant Angadi', 'Ashok Hebballi', 'BASALING HALLUR', 'Chinmayi Chinnu', 'Dr.Rashmi I Turamari', 'Gagan muragi', 'Ganesh Suryavanshi', 'Geeta G Geeta G', 'Harshita Sardesai', 'Kalmesh Angadi', 'Keertana Savadi', 'Khaja Moinuddin Chanpattan', 'MD adana Amminbhavi', 'Manjula shindhe Shindhe', 'Meghana5thclass radhika9thclass Suresh Rathod', 'Muskan Nadaf', 'Naveen Kadam', 'Nisar Airani', 'Nivedita Viraktamath', 'PavanKumar 5th IRANNA THEERTHAD', 'Poornima Viresh', 'Praksh Gali', 'Prateek. Poorvika Hulajogi.', 'Pratham Dodamani', 'Pushpa JSS', 'Ratanna Kurhatti', 'Ratna udakeri Udakeri', 'Rishabh M.G', 'Rohit Agadi', 'Sahana Pattanshetty', 'Sakshi Pujar 5th', 'Samarth .Y .Kanale', 'Sanjana Muddi', 'Shivuaprasad Iliger', 'Shravan', 'Shreyash S.S', 'Shrishail Hiremath', 'Shrushti Mallaraddi', 'Shweta Telgar', 'Srushti more', 'Supreet Priyanka', 'Tejaswini 5th. Ratan 3rd Desai', 'Trisha raghavendra', 'Vaishnavi 5 Barigidad', 'Vinayak Anad', 'nivedita s Mareppagoudar']
