@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+	<title>Hindi06-05</title>
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+		html, body{
+			margin: 0;
+			padding: 0;
+			background: wheat;
+			font-size: 15pt;
+			font-family: 'Eczar', serif;
+		}
+		body{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 80vh;
+		}
+		#mainCont{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+			width: 100%;
+			padding-top: 8vh;
+		}
+		#head, #foot{
+			position: fixed;
+			left: 0; right: 0;
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			height: 8vh;
+			background: #0009;
+			color: wheat;
+			align-items: center;
+			justify-content: center;
+			font-weight: bold;
+		}
+		#head{
+			top:0;
+		}
+		#foot{
+			bottom: 0;
+		}
+		#foot > div{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 8vh;
+		}
+		#splitCont{
+			font-size: 2em;
+			margin-top: -0.5em;
+			padding: 0.25em 0;
+		}
+		#aniCont{
+			display: flex;
+			font-size: 3em;
+			flex-direction: row;
+			width: 100%;
+			flex-grow: 1;
+			background: #f008;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			animation: infinite 2s breakWord ease-in-out;
+			padding: 0.25em 0;
+		}
+		@keyframes breakWord {
+			0%{letter-spacing: 0.25em;text-indent: 0.25em;}
+			50%{letter-spacing: 0em;text-indent: 0em;}
+			100%{letter-spacing: 0em;text-indent: 0em;}
+		}
+		#splitter{
+			width: 100%;
+			display: flex;
+			background: #fff5;
+			color: #0005;
+			border: none;
+			resize: vertical;
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			font-size: 3em;
+			padding: 0.25em 0;
+			height: auto;
+			margin-top: 0vh;
+			font-family: 'Eczar', serif;
+		}
+		#splitter:focus{
+			background: #fffa;
+			color: #000;
+		}
+		#wrdCont{
+			font-size: 2em;
+			padding: 0;
+		}
+		#prvBtn{
+			transform: scaleX(-1);
+		}
+		#aniCont.smaller{
+			font-size: 2.5em;
+		}
+	</style>
+</head>
+<body>
+	<a href="quickAPK.apk" download="quickAPK.apk">
+		<button type="button">Download</button>
+         </a>
+</body>
+</html>
