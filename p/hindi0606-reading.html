@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="author" content="#pushpaTr - Hindi Teacher" />
+	<meta property="og:image" itemprop="image" content="https://pushpatr.github.io/2021-22/a/r-maatra.jpg" />
+	<meta name="description" content="Reading Lesson-5 ('र' की मात्राएँ) with meanings of all words." />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/css/uikit.min.css" />
+	<title>Hindi05-TB04-Reading</title>
+
+	<style>
+		*{
+			box-sizing: border-box;
+		}
+		html, body{
+			margin: 0;
+			padding: 0;
+			background: wheat;
+			font-size: 14pt;
+			font-family: 'Eczar', serif;
+		}
+		body{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 80vh;
+			word-spacing: 0.4em;
+		}
+		#mainCont{
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			width: 100%;
+			padding: 0.5em;
+			text-align: justify;
+		}
+		#head, #foot{
+			position: fixed;
+			left: 0; right: 0;
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			height: 8vh;
+			min-height: 54px;
+			background: #0009;
+			color: wheat;
+			align-items: center;
+			justify-content: center;
+			font-weight: bold;
+		}
+		#head{
+			top:0;
+			font-weight: bold;
+			font-size: 1.4em;
+			box-shadow: 0 0 10px #0009;
+			border-bottom: 4px solid #0006;
+		}
+		.meaning {
+			font-weight: 600;
+			display: inline-block;
+			background: #00000018;
+			color: seagreen;
+			border-radius: 0.25em;
+			font-size: 18pt;
+		}
+		div.uk-tooltip.uk-active{
+			background: #444;
+			padding: 0.25em 0.5em;
+			position: relative;
+			border-radius: 0.25em;
+			border: 2px solid black;
+			font-size: 1.2em;
+		}
+		div.uk-tooltip.uk-active::before{
+			display: block;
+			content: "";
+			bottom: -8px;
+			left: calc(50% - 10px);
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 8px 10px 0 10px;
+			border-color: #000000 transparent transparent transparent;
+		}
+		#lessonEnd{
+			width: 100%;
+			text-align: center;
+			height: 40vh;
+			padding: 10vh 0;
+		}
+		@supports (backdrop-filter: blur()) {
+			#head {
+				background: #0009;
+				backdrop-filter: blur(5px);
+			}
+			div.uk-tooltip.uk-active{
+				background: #0009;
+				backdrop-filter: blur(5px);
+			}
+		}
+		.grn{color: seagreen;}
+		.blu{color: cornflowerblue;}
+		.pnk{color: hotpink;}
+		.prp{color: mediumpurple;}
+		.red{color: firebrick;}
+		.org{color: orangered;}
+		.mean{
+			color: aqua;
+		}
+		div.uk-tooltip.uk-active b{
+			color: aqua;
+		}
+		#refCont, #padCont, #padenCont{
+			width: 100%;
+			display: grid;
+			grid-gap: 0.5em;
+			border-top: 2px solid #0005;padding-top: 1em;
+			grid-template-columns: repeat(3, 1fr);
+		}
+		#refCont > div,#padCont > div,#padenCont > div{
+			display: flex;
+			width: 100%;
+			align-items: center;
+			justify-content: center;
+			padding: 0.5em 0 0.25em 0;
+		}
+		.lsnHeading{
+			grid-column: span 3;
+			text-align: center;
+			font-size: 1.5em;
+			font-weight: 600;
+		}
+		.tglCont{
+			grid-column: span 3;
+			display: flex;
+			flex-direction: column;
+		}
+		.tgl{
+			background: lightblue;
+			color: black;
+			flex-grow: 1;
+			width: 100%;
+			padding: 0.5em;
+			border-radius: 0.5em 0.5em 0 0;
+		}
+		.tgl-ans{
+			background: lightgreen;
+			color: black;
+			flex-grow: 1;
+			width: 100%;
+			padding: 0.5em;
+			border-radius: 0 0 0.5em 0.5em;
+		}
+		.qrkh3{font-size: 1.2em; font-weight: bold;}
+		.qrkh4{font-size: 1.1em; font-weight: bold;}
+	</style>
+</head>
+<body>
+	<div id="head">संयुक्ताक्षर</div>
+	<div id="mainCont">
+		<br><br><br>
+		<div class="qrkh3">पढ़ो और समझो:</div>
+		<div class="qrkh4">(Read and Understand)</div>
+		<div style="grid-column: span 3;" class="uk-alert-warning" uk-alert>
+			<a class="uk-alert-close" uk-close></a>
+			<p>Click on the words below to view their meaning.</p>
+		</div>
+		<div id="refCont">
+		</div>
+		<br><br>
+	</div>
+
+	<div id="modal-example" uk-modal>
+		<div class="uk-modal-dialog uk-modal-body uk-background-muted">
+			<h2 class="uk-modal-title">Please Note</h2>
+			<p>Click on the Words or Sentences to view their meaning in English.</p>
+			<p class="uk-text-right">
+				<button class="uk-button uk-button-primary uk-modal-close" type="button">OK</button>
+			</p>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.2/dist/js/uikit-icons.min.js"></script>
+	<script>
+		$(function() {
+
+			let lsnEnd = '<div id="lessonEnd"> * * * * * </div>';
+
+			let refList = [
+				{w:"रक्षक", m:"Protector"},
+				{w:"क्षत्रिय", m:"Warrior"},
+				{w:"कक्षा", m:"Class"},
+				{w:"पत्र", m:"Letter"},
+				{w:"त्रिशूल", m:"Trident,<br>a three-pronged spear"},
+				{w:"नेत्र", m:"Eye"},
+				{w:"यज्ञ", m:"Yajna"},
+				{w:"विज्ञान", m:"Science"},
+				{w:"ज्ञान", m:"Knowledge"},
+				{w:"श्रवणकुमार", m:"ShravanKumar,<br>Boy's name"},
+				{w:"श्रमिक", m:"Labor"},
+				{w:"परिश्रम", m:"Hard work"},
+				{w:"मक्का", m:"Maize"},
+				{w:"भक्त", m:"Devotee"},
+				{w:"सख्त", m:"Hard, Strict"},
+				{w:"ग्वाला", m:"Milkman/Shepherd"},
+				{w:"सच्चा", m:"Truthful"},
+				{w:"ज्यादा", m:"More"},
+				{w:"पत्थर", m:"Stone"},
+				{w:"सत्य", m:"Truth"},
+				{w:"पत्ता", m:"Leaf"},
+				{w:"पृथ्वी", m:"Earth, Ground"},
+				{w:"चश्मा", m:"Spectacles"},
+				{w:"अन्न", m:"Grain, Foodgrain"},
+				{w:"शब्द", m:"Word"},
+				{w:"सभ्य", m:"Civilized"},
+				{w:"बिल्ली", m:"Cat"},
+				{w:"रस्सी", m:"Rope"},
+				{w:"पुष्प", m:"Flower"},
+				{w:"लट्टा", m:"Rag of Cloth"},
+				{w:"लड्डू", m:"A type of sweet"},
+				{w:"विद्या", m:"Education, Knowledge"},
+				{w:"द्वार", m:"Door, Entrance"},
+				{w:"युद्ध", m:"War"},
+				{w:"चिन्ह", m:"Sign/Symbol"},
+				{w:"ह्रास", m:"Depreciation"},
+				{w:"श्रीमान", m:"Mister (Mr.)"}
+			]
+
+			
+			let colorList = [
+				"grn", "org", "blu", "pnk", "prp", "red"
+			]
+			let wordW = "", wordE = "";
+			let i = 0;
+
+			for (const word of refList) {
+				let colorF = i % 6;
+				wordW = word.w;
+				wordE = word.m;
+				$("#refCont").append('<div class="meaning ' + colorList[colorF] + '" uk-tooltip="<b>' + word.w + '</b><br/>' + word.m + '">' + word.w + '</div> ');
+				i = i + 1;
+			}
+
+			$(".ref0").removeAttr("hidden");
+			$(".pad0").removeAttr("hidden");
+			$(".paden0").removeAttr("hidden");
+
+			setTimeout(function () {
+				let elm = $("#modal-example")
+				UIkit.modal(elm).show();
+			}, 3000);
+
+			$("#mainCont").append(lsnEnd)
+			$("#head").click(function () {
+				toggleFullScreen();
+			});
+
+			function toggleFullScreen(){document.fullscreenElement||document.mozFullScreenElement||document.webkitFullscreenElement||document.msFullscreenElement?document.exitFullscreen?document.exitFullscreen():document.msExitFullscreen?document.msExitFullscreen():document.mozCancelFullScreen?document.mozCancelFullScreen():document.webkitExitFullscreen&&document.webkitExitFullscreen():document.documentElement.requestFullscreen?document.documentElement.requestFullscreen():document.documentElement.msRequestFullscreen?document.documentElement.msRequestFullscreen():document.documentElement.mozRequestFullScreen?document.documentElement.mozRequestFullScreen():document.documentElement.webkitRequestFullscreen&&document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT)}
+		});
+	</script>
+</body>
+</html>
