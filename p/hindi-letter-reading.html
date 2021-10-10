@@ -1,27 +1,55 @@
-<!doctype html> <html lang="en"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>हिन्दी वर्णमाला</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-*{box-sizing: border-box;}
-html,body{margin:0;padding:0; background:wheat;color:#333;font-family:'Eczar', serif}
-#res{height:100vh;width:100vw;display:flex;align-items: center;justify-content:center; font-size:50vmin;font-family: 'Eczar', serif;}
-</style>
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>#pushpaTr | हिन्दी वर्णमाला</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif+Kannada:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			background: wheat;
+			color: #333;
+			font-family: 'Eczar', serif
+		}
+
+		#res {
+			height: 100vh;
+			width: 100vw;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 50vmin;
+			font-family: 'Eczar', serif;
+		}
+	</style>
 </head>
+
 <body>
-<div id="res">
-<span style="font-size:0.3em">हिन्दी वर्णमाला</span>
-</div>
+	<div id="res">
+		<span style="font-size:0.3em">हिन्दी वर्णमाला</span>
+	</div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-<script>
-$(function(){
-  let hin = ["अ", "आ", "इ", "ई", "उ", "ऊ", "ऋ", "ए", "ऐ", "ओ", "औ", "अं", "अः", "क", "ख", "ग", "घ", "ङ", "च", "छ", "ज", "झ", "ञ", "ट", "ठ", "ड", "ढ", "ण", "त", "थ", "द", "ध", "न", "प", "फ", "ब", "भ", "म", "य", "र", "ल", "व", "श", "ष", "स", "ह"];
-  $("#res").click(function(){
-       $("#res").html(hin[ Math.floor(Math.random() * hin.length) ])
-   });
-});
-</script>
+	<script>
+		$(function () {
+			let hin = ["अ", "आ", "इ", "ई", "उ", "ऊ", "ऋ", "ए", "ऐ", "ओ", "औ", "अं", "अः", "क", "ख", "ग", "घ", "ङ", "च", "छ", "ज", "झ", "ञ", "ट", "ठ", "ड", "ढ", "ण", "त", "थ", "द", "ध", "न", "प", "फ", "ब", "भ", "म", "य", "र", "ल", "व", "श", "ष", "स", "ह", "क्ष", "त्र", "ज्ञ", "श्र"];
+			$("#res").click(function () {
+				$("#res").html(hin[Math.floor(Math.random() * hin.length)])
+			});
+		});
+	</script>
 </body>
+
 </html>
