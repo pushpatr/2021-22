@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>हिन्दी मात्राएँ</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			background: wheat;
+			color: #333;
+			font-family: 'Eczar', serif;
+			/*animation:bgclr 1.5s linear infinite*/
+		}
+
+		#res {
+			height: 100vh;
+			width: 100vw;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 50vmin;
+			font-family: 'Eczar', serif;
+		}
+
+		@keyframes bgclr {
+			0% {
+				box-shadow: inset 0 0 wheat;
+			}
+
+			100% {
+				box-shadow: inset 0 -100vh #0f03
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div id="res">
+		<span style="font-size:0.3em">हिन्दी मात्राएँ</span>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			let rst = 1.5
+			let matra = ["", "ा", "ि", "ी", "ु", "ू", "ृ", "े", "ै", "ो", "ौ", "ं", "ः"]
+			let hin = ["क", "ख", "ग", "घ", "च", "छ", "ज", "झ", "ट", "ठ", "ड", "ढ", "ण", "त", "थ", "द", "ध", "न", "प", "फ", "ब", "भ", "म", "य", "र", "ल", "व", "श", "ष", "स", "ह", "क्ष", "त्र", "ज्ञ", "श्र"];
+			function showNew() {
+				let ltr = hin[Math.floor(Math.random() * hin.length)];
+				let mtr = matra[Math.floor(Math.random() * matra.length)];
+				for (; "ृ" == mtr && ("ट" == ltr || "ठ" == ltr || "ड" == ltr || "ढ" == ltr || "ण" == ltr || "क्ष" == ltr || "त्र" == ltr || "ज्ञ" == ltr);)showNew();
+				$("#res").html(ltr + mtr);
+			}
+			$("#res").click(function () {
+				showNew();
+			});
+			/*
+			setInterval(function(){ showNew(); }, rst*1000);*/
+
+		});
+	</script>
+</body>
+
+</html>
