@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>#pushpaTr | Tables</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif+Devanagari:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif+Kannada:wght@100;200;300;400;500;600;700;800;900&display=swap"
+		rel="stylesheet">
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			background: wheat;
+			color: #333;
+			font-family: 'Noto Serif', serif
+		}
+		body{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-end;
+			min-height: 90vh;
+			width: 100%;
+		}
+
+		#res {
+			height: 50vh;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			font-size: 15vmin;
+			font-family: 'Noto Serif', serif;
+		}
+
+		#tabSelector {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			grid-gap: 0.5em;
+			padding: 0.5em;
+			width: 100%;
+		}
+
+		button{
+			font-size: 2em;
+			border-radius: 0.5em;
+			border: none;
+			background: #0008;
+			color: wheat;
+		}
+
+		#res1{
+			height: 25vh;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-end;
+		}
+		#res2{
+			font-size: 2em;
+			height: 25vh;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="res">
+		<div id="res1"><span style="font-size: 0.4em;">Click on the numbers below</span></div>
+		<div id="res2"></div>
+	</div>
+	<div id="tabSelector">
+		<button id="1">1</button>
+		<button id="2">2</button>
+		<button id="3">3</button>
+		<button id="4">4</button>
+		<button id="5">5</button>
+		<button id="6">6</button>
+		<button id="7">7</button>
+		<button id="8">8</button>
+		<button id="9">9</button>
+		<button id="10">10</button>
+		<button id="11">11</button>
+		<button id="12">12</button>
+		<button id="13">13</button>
+		<button id="14">14</button>
+		<button id="15">15</button>
+		<button id="16">16</button>
+		<button id="17">17</button>
+		<button id="18">18</button>
+		<button id="19">19</button>
+		<button id="20">20</button>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+	<script>
+		$(function () {
+			let n = 0, i = 0, a = 0, f = 0;
+			$("button").click(function () {
+				n = $(this).attr("id");
+				i = 0;
+				a = 0;
+				f = 0;
+				$("#res1").html(n);
+				$("#res2").html("");
+			});
+			$("#res").click(function(){
+				if (f == 0) {
+					if (i<11) {
+						i = i + 1;
+						a = n * i;
+						$("#res1").html(n + "&times;" + i);
+						f = 1;
+						$("#res2").html("");
+					}
+					if (i == 11) {
+						i = 1;
+						a = n * i;
+						$("#res1").html(n + "&times;" + i);
+						f = 1;
+						$("#res2").html("");
+					}
+				}
+				else{
+					$("#res2").html(a);
+					f = 0;
+				}
+			});
+		});
+	</script>
+</body>
+
+</html>
